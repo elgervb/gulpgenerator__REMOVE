@@ -1,0 +1,39 @@
+/*
+ * Set base font
+ */
+ html{
+  font-size: 16px;
+}
+html, body, .full-screen{
+  height: 100%;
+}
+body, input, textarea, select{
+  color:  $font-color;
+  font: 1em "Open Sans",Helvetica,Arial,sans-serif;
+}
+::placeholder{
+    color:#666;
+    font-style: italic;
+}
+a{
+  background:transparent;
+  border: 1px solid transparent;
+  color: #4082A0;
+  cursor: pointer;
+  text-decoration: none;
+  vertical-align:baseline;
+  transition: all .3s ease;
+}
+p a:hover{
+  border-bottom: 1px solid #4082A0;
+}
+img{
+  max-width: 100%;
+}
+ol{
+  margin-left: 18px;
+  padding-bottom: 15px;
+}
+ul{
+  list-style: none;
+}

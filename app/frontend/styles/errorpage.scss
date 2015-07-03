@@ -1,0 +1,16 @@
+@import 'variables';
+
+.http-error{
+  margin: 60px auto;
+  min-width: 640px;
+  position: relative;
+  width: 50%;
+
+  .error-code{
+    font-size: 24em;
+    opacity: .2;
+    position: absolute;
+    top: 45%;
+    right: 0;
+  }
+}

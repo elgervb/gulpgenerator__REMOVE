@@ -1,0 +1,14 @@
+{
+	"task":[{
+		"name": "clean",
+		"alias": "clear",
+		"description": "Cleans the `dist` folder",
+		"dependencies": ["clear-cache"]
+	},
+	{
+		"name": "clear-cache",
+		"alias": null,
+		"description": null,
+		"dependencies": []
+	}]
+}

@@ -1,0 +1,414 @@
+2015-07-03 15:57:15:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:57:15:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 15:57:15:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Undefined variable: taskname
+2015-07-03 15:57:15:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(37): compact\handler\ErrorHandler->handle(8, 'Undefined varia...', 'E:\pv\UwAmp\www...', 37, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 15:57:15:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 15:57:15:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:57:15:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:57:15:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:57:15:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:57:15:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:57:15:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:57:25:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:57:25:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 15:57:25:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Undefined variable: taskname
+2015-07-03 15:57:25:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(37): compact\handler\ErrorHandler->handle(8, 'Undefined varia...', 'E:\pv\UwAmp\www...', 37, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 15:57:25:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 15:57:25:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:57:25:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:57:25:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:57:25:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:57:25:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:57:25:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:58:05:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:58:05:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 15:58:05:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Undefined variable: taskname
+2015-07-03 15:58:05:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(37): compact\handler\ErrorHandler->handle(8, 'Undefined varia...', 'E:\pv\UwAmp\www...', 37, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 15:58:05:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 15:58:06:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:58:06:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:58:06:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:58:06:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:58:06:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:58:06:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:58:14:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:58:14:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 15:58:14:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Undefined variable: taskname
+2015-07-03 15:58:14:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(37): compact\handler\ErrorHandler->handle(8, 'Undefined varia...', 'E:\pv\UwAmp\www...', 37, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 15:58:14:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 15:58:14:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:58:14:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:58:14:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:58:14:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:58:14:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:58:14:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:58:23:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:58:23:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 15:58:23:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Undefined variable: taskname
+2015-07-03 15:58:23:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(37): compact\handler\ErrorHandler->handle(8, 'Undefined varia...', 'E:\pv\UwAmp\www...', 37, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 15:58:23:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 15:58:24:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:58:24:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:58:24:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:58:24:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:58:24:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:58:24:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:59:06:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:59:06:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 15:59:06:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Undefined variable: taskname
+2015-07-03 15:59:06:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(37): compact\handler\ErrorHandler->handle(8, 'Undefined varia...', 'E:\pv\UwAmp\www...', 37, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 15:59:06:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 15:59:06:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:59:06:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:59:06:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:59:06:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:59:06:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:59:06:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:59:23:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:59:23:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 15:59:23:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Undefined variable: view
+2015-07-03 15:59:23:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(42): compact\handler\ErrorHandler->handle(8, 'Undefined varia...', 'E:\pv\UwAmp\www...', 42, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 15:59:23:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 15:59:23:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:59:23:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:59:23:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:59:23:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 15:59:23:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:59:23:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 15:59:33:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:59:33:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 15:59:41:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 15:59:41:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:00:00:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:00:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:00:09:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:09:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:00:25:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:25:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:00:25:000000 127.0.0.1 WARNING No route found for GET / referrer: 
+2015-07-03 16:00:25:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:00:25:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:25:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:00:25:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:25:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:00:25:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:00:25:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:00:39:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:39:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:00:39:000000 127.0.0.1 WARNING Could not find a handler for stdClass
+2015-07-03 16:00:39:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:00:40:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:40:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:00:40:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:40:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:00:40:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:00:40:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:00:52:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:52:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:00:52:000000 127.0.0.1 WARNING Could not find a handler for stdClass
+2015-07-03 16:00:52:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:00:52:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:52:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:00:52:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:00:52:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:00:52:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:00:52:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:03:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:03:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:01:03:000000 127.0.0.1 WARNING No route found for GET / referrer: 
+2015-07-03 16:01:03:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:03:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:03:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:03:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:03:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:03:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:03:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:07:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:07:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:01:07:000000 127.0.0.1 WARNING No route found for GET / referrer: 
+2015-07-03 16:01:07:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:07:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:07:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:07:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:07:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:07:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:07:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:09:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:09:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:01:09:000000 127.0.0.1 WARNING No route found for GET / referrer: 
+2015-07-03 16:01:09:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:09:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:09:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:09:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:09:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:09:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:09:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:20:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:20:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:01:20:000000 127.0.0.1 WARNING Could not find a handler for stdClass
+2015-07-03 16:01:20:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:21:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:21:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:21:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:21:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:21:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:21:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:28:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:28:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:01:28:000000 127.0.0.1 WARNING Could not find a handler for stdClass
+2015-07-03 16:01:28:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:28:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:28:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:28:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:01:28:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:01:28:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:01:28:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:02:59:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:02:59:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:02:59:000000 127.0.0.1 ERROR Handle exception compact\filesystem\exceptions\FileNotFoundException File E:\pv\UwAmp\www\gulpgenerator\app\gulp/gulp/tasks/clean.js does not exist.
+2015-07-03 16:02:59:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\impl\TemplateView.php(37): compact\mvvm\impl\TemplateView->convertTemplate('E:\pv\UwAmp\www...')
+#1 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\impl\ViewModel.php(36): compact\mvvm\impl\TemplateView->__construct('E:\pv\UwAmp\www...', NULL)
+#2 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(21): compact\mvvm\impl\ViewModel->__construct('E:\pv\UwAmp\www...')
+#3 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(36): gulp\GulpTasks->getTemplate('clean')
+#4 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#5 [internal function]: app\AppContext->app\{closure}()
+#6 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#7 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#8 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#9 {main}
+2015-07-03 16:02:59:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 16:03:00:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:03:00:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:03:00:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:03:00:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:03:00:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:03:00:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:03:35:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:03:35:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:03:35:000000 127.0.0.1 ERROR Handle exception compact\filesystem\exceptions\FileNotFoundException File E:\pv\UwAmp\www\gulpgenerator\app\gulp/tasks/clear-cache.js does not exist.
+2015-07-03 16:03:35:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\impl\TemplateView.php(37): compact\mvvm\impl\TemplateView->convertTemplate('E:\pv\UwAmp\www...')
+#1 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\impl\ViewModel.php(36): compact\mvvm\impl\TemplateView->__construct('E:\pv\UwAmp\www...', NULL)
+#2 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(21): compact\mvvm\impl\ViewModel->__construct('E:\pv\UwAmp\www...')
+#3 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(36): gulp\GulpTasks->getTemplate('clear-cache')
+#4 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#5 [internal function]: app\AppContext->app\{closure}()
+#6 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#7 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#8 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#9 {main}
+2015-07-03 16:03:35:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 16:03:35:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:03:35:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:03:35:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:03:35:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:03:35:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:03:35:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:05:18:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:05:18:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:07:30:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:07:30:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:07:30:000000 127.0.0.1 WARNING No route found for GET / referrer: 
+2015-07-03 16:07:30:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:07:30:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:07:30:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:07:30:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:07:30:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:07:30:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:07:30:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:07:50:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:07:50:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:07:50:000000 127.0.0.1 WARNING No route found for GET / referrer: 
+2015-07-03 16:07:50:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:07:50:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:07:50:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:07:50:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:07:50:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:07:50:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:07:50:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:07:59:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:07:59:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:07:59:000000 127.0.0.1 WARNING No route found for GET / referrer: 
+2015-07-03 16:07:59:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:07:59:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:07:59:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:07:59:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:07:59:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:07:59:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:07:59:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:08:39:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:08:39:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:09:59:000000 127.0.0.1 WARNING No route found for GET / referrer: 
+2015-07-03 16:09:59:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:09:59:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:09:59:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:09:59:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:09:59:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:09:59:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:09:59:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:10:00:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:10:00:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: 
+2015-07-03 16:10:00:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:10:00:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:10:00:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: 
+2015-07-03 16:10:00:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:10:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:10:01:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:10:07:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:10:07:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:10:43:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:10:43:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:10:57:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:10:57:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:13:29:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:13:29:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Trying to get property of non-object
+2015-07-03 16:13:29:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(36): compact\handler\ErrorHandler->handle(8, 'Trying to get p...', 'E:\pv\UwAmp\www...', 36, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 16:13:29:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:29:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: 
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:29:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:29:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: 
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:29:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:29:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:29:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:29:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:29:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:29:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: 
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:29:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:29:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: 
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:29:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:29:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: 
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:29:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:29:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: 
+2015-07-03 16:13:29:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:42:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:42:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:13:42:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Undefined property: stdClass::$description
+2015-07-03 16:13:42:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(40): compact\handler\ErrorHandler->handle(8, 'Undefined prope...', 'E:\pv\UwAmp\www...', 40, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 16:13:42:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 16:13:42:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:42:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: 
+2015-07-03 16:13:42:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:42:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:42:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: 
+2015-07-03 16:13:42:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:42:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:42:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:13:42:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:42:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:42:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:13:42:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:42:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:42:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: 
+2015-07-03 16:13:42:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:13:42:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:13:42:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: 
+2015-07-03 16:13:42:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:15:00:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:00:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:15:00:000000 127.0.0.1 ERROR Handle exception ErrorException Notice: Undefined property: stdClass::$description
+2015-07-03 16:15:00:000000 127.0.0.1 ERROR #0 E:\pv\UwAmp\www\gulpgenerator\app\gulp\GulpTasks.php(40): compact\handler\ErrorHandler->handle(8, 'Undefined prope...', 'E:\pv\UwAmp\www...', 40, Array)
+#1 E:\pv\UwAmp\www\gulpgenerator\app\AppContext.php(27): gulp\GulpTasks->generate()
+#2 [internal function]: app\AppContext->app\{closure}()
+#3 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\routing\Router.php(75): call_user_func_array(Object(Closure), Array)
+#4 E:\pv\UwAmp\www\framework\edge\compact\classes\compact\mvvm\FrontController.php(150): compact\routing\Router->run('/', 'GET')
+#5 E:\pv\UwAmp\www\gulpgenerator\index.php(8): compact\mvvm\FrontController->run()
+#6 {main}
+2015-07-03 16:15:00:000000 127.0.0.1 FINE Found route GET 500
+2015-07-03 16:15:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:01:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: 
+2015-07-03 16:15:01:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:15:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:01:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: 
+2015-07-03 16:15:01:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:15:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:01:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:15:01:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: HTTP://LOCALHOST/GULPGENERATOR/
+2015-07-03 16:15:01:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:15:01:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:15:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:01:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: 
+2015-07-03 16:15:01:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:15:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:01:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: 
+2015-07-03 16:15:01:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:15:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:01:000000 127.0.0.1 WARNING No route found for GET /static/css/main.min.css referrer: 
+2015-07-03 16:15:01:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:15:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:01:000000 127.0.0.1 WARNING No route found for GET /static/css/errorpage.min.css referrer: 
+2015-07-03 16:15:01:000000 127.0.0.1 FINE Found route GET 404
+2015-07-03 16:15:09:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:09:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:15:50:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:50:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:15:54:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:15:54:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:16:01:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:16:01:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:16:05:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:16:05:000000 127.0.0.1 FINE Found route GET ^\/$
+2015-07-03 16:16:08:000000 127.0.0.1 FINEST Including app context: app\AppContext
+2015-07-03 16:16:08:000000 127.0.0.1 FINE Found route GET ^\/$

@@ -6,6 +6,11 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+			<name>org.eclipse.wst.common.project.facet.core.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>org.eclipse.wst.validation.validationbuilder</name>
 			<arguments>
 			</arguments>
@@ -18,5 +23,17 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.php.core.PHPNature</nature>
+		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
+	<filteredResources>
+		<filter>
+			<id>1435921521872</id>
+			<name></name>
+			<type>30</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
 </projectDescription>

@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'blog/variables-blog';
+
+@import 'partials/responsive';
+
+@import 'blog/blog-list';
+@import 'blog/blog-post';
+@import 'blog/blog-header';
+
+body{
+  background-color: $background-color-dark;
+}
