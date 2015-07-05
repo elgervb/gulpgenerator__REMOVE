@@ -2,7 +2,7 @@
 namespace gulp;
 
 use compact\mvvm\impl\ViewModel;
-use compact\handler\impl\json\Json;
+
 class GulpTasks
 {
 

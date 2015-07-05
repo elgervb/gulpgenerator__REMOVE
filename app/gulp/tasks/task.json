@@ -3,12 +3,21 @@
 		"name": "clean",
 		"alias": "clear",
 		"description": "Cleans the `dist` folder",
-		"dependencies": ["clear-cache"]
+		"dependencies": ["clear-cache"],
+		"libs": ["del"]
 	},
 	{
 		"name": "clear-cache",
 		"alias": null,
 		"description": null,
-		"dependencies": []
+		"dependencies": [],
+		"libs": ["gulp-cache"]
+	},
+	{
+		"name": "info",
+		"alias": null,
+		"description": "log some info about this app, takes the information from the package.json",
+		"dependencies": [],
+		"libs": ["gulp-util"]
 	}]
 }

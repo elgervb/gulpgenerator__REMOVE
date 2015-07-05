@@ -1,4 +1,4 @@
 function() {
-  // Or, just call this for everything
+  var cache = require('gulp-cache')
   cache.clearAll();
 }

@@ -24,7 +24,7 @@ class AppContext implements IAppContext
     {
         $router->add("^/$", function(){
             $g = new GulpTasks();
-        	return $g->generate();
+        	return "<pre>".$g->generate()."</pre>";
         });
         
         /**
