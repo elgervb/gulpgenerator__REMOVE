@@ -43,3 +43,4 @@ Temporary Items
 .apdisk
 /static/
 /node_modules/
+*.log
