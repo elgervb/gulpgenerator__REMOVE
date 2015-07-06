@@ -29,7 +29,7 @@ class GulpTasks
      */
     public function generate(){
         
-        $json = json_decode(file_get_contents(__DIR__ . "/tasks/task.json"));
+        $json = json_decode(file_get_contents(__DIR__ . "/tasks/tasks.json"));
         $template = new ViewModel(__DIR__ . "/tasks/_template.txt");
         
         $result = "";
