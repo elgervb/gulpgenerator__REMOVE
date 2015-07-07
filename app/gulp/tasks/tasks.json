@@ -1,22 +1,22 @@
 {
 	"task":[{
-		"name": "clean",
-		"alias": "clear",
+		"type": "clean",
+		"name": "clear",
 		"description": "Cleans the `dist` folder",
 		"dependencies": ["clear-cache"],
 		"libs": ["del"],
 		"path": "./dist"
 	},
 	{
-		"name": "clear-cache",
-		"alias": null,
+		"type": "clear-cache",
+		"name": null,
 		"description": null,
 		"dependencies": [],
 		"libs": ["gulp-cache"]
 	},
 	{
-		"name": "copy",
-		"alias": "copy-fonts",
+		"type": "copy",
+		"name": "copy-fonts",
 		"description": "Copy all fonts to the destination directory",
 		"dependencies": [],
 		"libs": [],
@@ -24,8 +24,8 @@
 		"dest": "./dist/fonts"
 	},
 	{
-		"name": "copy",
-		"alias": "copy-template",
+		"type": "copy",
+		"name": "copy-template",
 		"description": "Copy all templates to the destination directory",
 		"dependencies": [],
 		"libs": [],
@@ -33,8 +33,8 @@
 		"dest": "./dist/fonts"
 	},
 	{
-		"name": "copy",
-		"alias": "copy-index",
+		"type": "copy",
+		"name": "copy-index",
 		"description": "Copy the index.html to the destination directory",
 		"dependencies": [],
 		"libs": [],
@@ -42,15 +42,15 @@
 		"dest": "./dist/fonts"
 	},
 	{
-		"name": "dependencies",
-		"alias": "copy",
+		"type": "dependencies",
+		"name": "copy",
 		"description": "Copy all to the destination directory",
 		"dependencies": ["copy-fonts", "copy-template", "copy-index"],
 		"libs": []
 	},
 	{
+		"type": "doxx",
 		"name": "doxx",
-		"alias": "doxx",
 		"description": "Create Javascript documentation",
 		"dependencies": ["todo"],
 		"libs": ["gulp-doxx"],
@@ -60,8 +60,8 @@
 		"urlPrefix": "./reports"
 	},
 	{
+		"type": "todo",
 		"name": "todo",
-		"alias": "todo",
 		"description": "Generate TODO's for all javascript",
 		"dependencies": [],
 		"libs": ["gulp-todo"],
@@ -69,8 +69,8 @@
 		"dest": "./reports"
 	},
 	{
+		"type": "info",
 		"name": "info",
-		"alias": null,
 		"description": "log some info about this app, takes the information from the package.json",
 		"dependencies": [],
 		"libs": ["gulp-util"]
