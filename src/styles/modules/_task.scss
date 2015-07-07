@@ -57,6 +57,7 @@ body{
     height: 0;
     margin: 0 auto;
     overflow: hidden;
+    position: relative;
     transition: height 0.2s ease-out;
 
     .task-body-inner{
@@ -70,6 +71,12 @@ body{
       border-bottom: 1px dotted $dark;
       background-color: $white;
       color: $black;
+    }
+
+    .edit-toggle{
+      position: absolute;
+      right: 5px;
+      top: 5px;
     }
   }
 

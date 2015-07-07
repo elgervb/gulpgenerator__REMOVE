@@ -5,6 +5,7 @@
 
   <div class="task-list">
 
+  <!-- iterate through the all tasks -->
     <div class="task" ng-repeat="(key, task) in tasks">
       <input type="radio" name="toggle" id="{{task.name}}" />
 
@@ -16,9 +17,14 @@
 
       <div class="task-body">
         <div class="task-body-inner">
+          <!-- iterate through the configured fields -->
           <div class="field" ng-repeat="(key, field) in task.fields">
+            
             <label>{{field.name}}</label>
-            <input type="{{field.type}}" placeholder="{{field.name}}" value="{{field.value}}"/>
+
+            <!-- Show edit or read only field -->
+            <span ng-show="!editmode">{{field.value}}</span>
+            <input ng-show="editmode" type="{{field.type}}" placeholder="{{field.name}}" value="{{field.value}}" />
           </div>
         
           <h3 class="dependencies" ng-show="task.dependencies.length">Dependencies</h3>
@@ -27,6 +33,10 @@
           </ul>
 
           <h3 class="no-task-specs" ng-hide="task.dependencies.length+task.fields.length">No specs for this task</h3>
+
+          <!-- Edit mode for this task -->
+          <a class="edit-toggle" ng-show="!editmode" ng-click="editmode=!editmode">Edit</a>
+          <a class="edit-toggle" ng-show="editmode" ng-click="editmode=!editmode">Close</a>
 
         </div>
       </div>
