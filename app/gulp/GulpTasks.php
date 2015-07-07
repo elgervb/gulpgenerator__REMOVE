@@ -36,13 +36,12 @@ class GulpTasks
             
             self::copyToView($task, $t);
             $t->function = $this->getTemplate($task->name);
+            self::copyToView($task, $t->function);
             $t->name = $task->alias ? $task->alias : $task->name;
             $t->dependencies = is_array($task->dependencies) ? implode(", ", $task->dependencies) : ""; 
             
             $result .= $t->render();
         }
-        
-        // TODO implement
         
         return $result;
     }
