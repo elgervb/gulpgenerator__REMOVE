@@ -1,4 +1,4 @@
 function() {
-  return gulp.src( [{src}] )
-    .pipe( gulp.dest( {dest} ) );
+  return gulp.src( [ '{src}' ] )
+    .pipe( gulp.dest( '{dest}' ) );
 }

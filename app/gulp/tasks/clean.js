@@ -1,3 +1,3 @@
 function(cb) {
-  require('del')([{path}], cb);
+  require('del')([ '{path}' ], cb);
 }
