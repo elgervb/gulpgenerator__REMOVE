@@ -28,7 +28,7 @@ class GulpTasks
      */
     public function generate(){
         
-        $json = self::convertToModel(json_decode(file_get_contents(__DIR__ . "/tasks/task.json")));
+        $json = self::convertToModel(json_decode(file_get_contents(__DIR__ . "/tasks/tasks.json")));
         $template = new ViewModel(__DIR__ . "/tasks/_template.txt");
         $result = "";
         foreach($json->task as $task){

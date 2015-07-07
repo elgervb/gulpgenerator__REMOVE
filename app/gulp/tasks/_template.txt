@@ -1,7 +1,7 @@
 /**
  * {description}
- *
- * {#dependencies} depends on: {dependencies}{/dependencies}
+ * 
+ * {#dependencies}depends on: {dependencies}{/dependencies}
  */
-gulp.task('{name}', {#dependencies}[{dependencies}]{/dependencies}, {function});
+gulp.task('{name}'{#dependencies}, [{dependencies}]{/dependencies}{#function}, {function}{/function});
 

@@ -1,0 +1,78 @@
+{
+	"task":[{
+		"name": "clean",
+		"alias": "clear",
+		"description": "Cleans the `dist` folder",
+		"dependencies": ["clear-cache"],
+		"libs": ["del"],
+		"path": "./dist"
+	},
+	{
+		"name": "clear-cache",
+		"alias": null,
+		"description": null,
+		"dependencies": [],
+		"libs": ["gulp-cache"]
+	},
+	{
+		"name": "copy",
+		"alias": "copy-fonts",
+		"description": "Copy all fonts to the destination directory",
+		"dependencies": [],
+		"libs": [],
+		"src": "./src/fonts/**",
+		"dest": "./dist/fonts"
+	},
+	{
+		"name": "copy",
+		"alias": "copy-template",
+		"description": "Copy all templates to the destination directory",
+		"dependencies": [],
+		"libs": [],
+		"src": "./src/app/**/*.html",
+		"dest": "./dist/fonts"
+	},
+	{
+		"name": "copy",
+		"alias": "copy-index",
+		"description": "Copy the index.html to the destination directory",
+		"dependencies": [],
+		"libs": [],
+		"src": "./src/index.html",
+		"dest": "./dist/fonts"
+	},
+	{
+		"name": "dependencies",
+		"alias": "copy",
+		"description": "Copy all to the destination directory",
+		"dependencies": ["copy-fonts", "copy-template", "copy-index"],
+		"libs": []
+	},
+	{
+		"name": "doxx",
+		"alias": "doxx",
+		"description": "Create Javascript documentation",
+		"dependencies": ["todo"],
+		"libs": ["gulp-doxx"],
+		"src": "./js/**/*.js",
+		"dest": "./dist",
+		"title": "Javascript Doxx",
+		"urlPrefix": "./reports"
+	},
+	{
+		"name": "todo",
+		"alias": "todo",
+		"description": "Generate TODO's for all javascript",
+		"dependencies": [],
+		"libs": ["gulp-todo"],
+		"src": "./js/app/**/*.js",
+		"dest": "./reports"
+	},
+	{
+		"name": "info",
+		"alias": null,
+		"description": "log some info about this app, takes the information from the package.json",
+		"dependencies": [],
+		"libs": ["gulp-util"]
+	}]
+}
