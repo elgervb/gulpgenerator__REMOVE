@@ -9,8 +9,7 @@ class GulpTasks
     /**
      * Fetches a template for the gulp task
      *
-     * @param string $taskname
-     *            The name of the gulp task
+     * @param string $taskname The name of the gulp task
      *            
      * @return \compact\mvvm\impl\ViewModel
      * 
@@ -29,23 +28,50 @@ class GulpTasks
      */
     public function generate(){
         
-        $json = json_decode(file_get_contents(__DIR__ . "/tasks/task.json"));
+        $json = self::convertToModel(json_decode(file_get_contents(__DIR__ . "/tasks/task.json")));
         $template = new ViewModel(__DIR__ . "/tasks/_template.txt");
-        
         $result = "";
         foreach($json->task as $task){
             $t = clone $template;
+            
+            self::copyToView($task, $t);
             $t->function = $this->getTemplate($task->name);
             $t->name = $task->alias ? $task->alias : $task->name;
-            $t->description = $task->description;
             $t->dependencies = is_array($task->dependencies) ? implode(", ", $task->dependencies) : ""; 
             
             $result .= $t->render();
-            
         }
         
         // TODO implement
         
         return $result;
+    }
+    
+    /**
+     * Converts the \stdClass JSON into a Model. This is needed because Model can handle undefined values and will not crash.
+     * 
+     * @param \stdClass $json
+     * 
+     * @return \compact\mvvm\impl\Model
+     */
+    private static function convertToModel(\stdClass $json){
+        $temp = serialize($json);
+        
+        $temp = preg_replace('@O:8:"stdClass":@','O:24:"\compact\mvvm\impl\Model":',$temp);
+        
+        return unserialize($temp);
+    }
+    /**
+     * Copy all fields of the model into the view
+     * 
+     * @param IModel $model
+     * @param IView $view
+     */
+    private static function copyToView(\compact\mvvm\IModel $model, \compact\mvvm\IView $view){
+        $vars = get_object_vars($model);
+   
+        foreach ($vars as $key => $value){
+            $view->$key = $value;
+        }
     }
 }
