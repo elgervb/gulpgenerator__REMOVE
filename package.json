@@ -1,10 +1,10 @@
 {
-  "name": "GulpGenerator",
+  "name": "skeletonSPA",
   "version": "1.0.0",
   "description": "Gulp generator",
   "main": "gulpfile.js",
   "keywords": [
-    "gulp generator"
+    "gulp"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,24 +23,29 @@
     "email": "elgervb@gmail.com"
   },
   "settings": {
-    "src": "./app/frontend/",
-    "dist": "./static/",
-    "reports": "./static/reports/",
+    "src": "./src/",
+    "dist": "./dist/",
+    "reports": "./reports/",
+    "tests": "./tests/",
     "serverport": 4000
   },
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^1.9.2",
+    "browser-sync": "^1.9.1",
     "del": "^1.0.0",
     "express": "^4.10.4",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.0.0",
     "gulp-cache": "^0.2.4",
+    "gulp-combine-media-queries": "^0.2.0",
     "gulp-concat": "^2.4.2",
     "gulp-doxx": "0.0.4",
     "gulp-flatten": "0.0.4",
+    "gulp-htmlhint": "^0.1.1",
+    "gulp-htmlmin": "^1.1.1",
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "^2.0.0",
+    "gulp-jscs": "^1.6.0",
     "gulp-jshint": "^1.9.0",
     "gulp-livereload": "^2.1.1",
     "gulp-minify-css": "^0.3.13",
@@ -50,12 +55,26 @@
     "gulp-rename": "^1.2.0",
     "gulp-replace": "^0.5.0",
     "gulp-sass": "^1.1.0",
+    "gulp-size": "^1.2.1",
     "gulp-sourcemaps": "^1.2.8",
     "gulp-strip-debug": "^1.0.2",
     "gulp-todo": "^2.2.1",
     "gulp-uglify": "^1.0.1",
     "gulp-util": "^3.0.4",
+    "gulp-zip": "^3.0.2",
+    "jasmine-core": "^2.3.4",
     "jshint-stylish": "^1.0.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-coverage": "^0.3.1",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-htmlfile-reporter": "^0.1.2",
+    "karma-ie-launcher": "^0.1.5",
+    "karma-jasmine": "^0.3.5",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-opera-launcher": "^0.1.0",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "map-stream": "0.0.5",
     "q": "^1.2.0",
     "yargs": "^1.3.3"
   }

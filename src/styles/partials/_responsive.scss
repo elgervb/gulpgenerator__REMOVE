@@ -84,11 +84,6 @@ $bp-desktop : 1200px;
     @content;
   }
 }
-@mixin max-phone-landscape{
-  @media (max-width: #{$bp-phone-landscape}) {
-    @content;
-  }
-}
 @mixin max-small-tablet{
   @media (max-width: #{$bp-small-tablet}) {
     @content;
@@ -99,7 +94,12 @@ $bp-desktop : 1200px;
     @content;
   }
 }
-@mixin responsive-max($width){
+@mixin max-desktop{
+  @media (max-width: #{$bp-desktop}) {
+    @content;
+  }
+}
+@mixin max-responsive($width){
   @media (max-width: $width){
     @content;
   }

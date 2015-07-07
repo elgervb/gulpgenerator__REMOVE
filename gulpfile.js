@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     q = require('q'),
     rename = require('gulp-rename'),
-    replace = require('gulp-replace');
+    replace = require('gulp-replace'),
+    size = require('gulp-size');
 
 var config = require('./package.json');
 var settings = config.settings;
@@ -94,22 +95,38 @@ gulp.task('copy-fonts', function() {
 });
 
 /**
- * task for copying templates only
+ * Task for copying templates. This will lint the HTML and remove comments
  */
 gulp.task('copy-template', function() {
+  var htmlmin = require('gulp-htmlmin'),
+      htmlhint = require("gulp-htmlhint");
   // copy all html && json
   return gulp.src( [settings.src + 'js/app/**/*.html', settings.src + 'js/app/**/*.json'])
+    .pipe(htmlhint({
+      htmlhintrc: '.htmlhintrc',
+    }))
+    .pipe(htmlhint.reporter())
+    // html min MUST come after the html hinter
+    .pipe(htmlmin({
+      collapseWhitespace: false, 
+      removeComments: true,
+    }))
     .pipe(cache(gulp.dest('dist/js/app')));
 });
 
 /**
-* Task for copying index page only. Optionally add live reload script to it
-*/
+ * Task for copying index page only. Optionally add live reload script to it
+ */
 gulp.task('copy-index', function() {
-  // copy the index.html
-  return gulp.src(settings.src + 'index.html')
-   .pipe(gulpif(settings.liveReload, replace(/(\<\/body\>)/g, "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>$1")))
-   .pipe(cache(gulp.dest(settings.dist)));
+  var htmlmin = require('gulp-htmlmin');
+   // copy the index.html
+   return gulp.src(settings.src + 'index.html')
+    .pipe(htmlmin({
+      collapseWhitespace: false, 
+      removeComments: true,
+    }))
+    .pipe(gulpif(settings.liveReload, replace(/(\<\/body\>)/g, "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>$1")))
+    .pipe(cache(gulp.dest(settings.dist)));
 });
 
 
@@ -125,13 +142,12 @@ gulp.task('default', ['build']);
 gulp.task('docs-js', ['todo'], function(){
   var gulpDoxx = require('gulp-doxx');
 
-  gulp.src([settings.src + '/js/**/*.js', 'README.md', settings.reports + '/TODO.md'])
+  gulp.src([settings.src + '/js/**/*.js', 'README.md', settings.reports + '/TODO.md', settings.tests + "/**" ])
     .pipe(gulpDoxx({
-      title: config.name,
+      title: config.name + " docs",
       urlPrefix: "file:///"+__dirname+settings.reports
     }))
     .pipe(gulp.dest(settings.reports));
-
 });
 
 /**
@@ -144,12 +160,39 @@ gulp.task('images', function() {
   setTimeout(function() {
     gulp.src(settings.src + 'img/**/*')
       .pipe(plumber(settings.plumberConfig()))
-      .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+      .pipe(size({title:"images before"}))
+      .pipe(cache(imagemin({ optimizationLevel: 5, progressivee: true, interlaced: true })))
+      .pipe(size({title:"images after "}))
       .pipe(gulp.dest(settings.dist + 'img'));
     deferred.resolve();
   }, 1);
 
   return deferred.promise;
+});
+
+gulp.task('list', function() {
+  var max = function(){
+    var max = 0;
+    for (var key in gulp.tasks) {
+      if(max < key.length){max = key.length;}
+    }
+    return max;
+  },
+  print = function(key, max){
+    while (key.length < max){
+      key += " ";
+    }
+    return key;
+  }
+
+  for (var key in gulp.tasks) {
+    var out = print(key, max()), task = gulp.tasks[key];
+    if (task.hasOwnProperty('dep') && task.dep.length > 0){
+      out += '  dep: ' + task.dep;
+    }
+
+    console.log(out);
+  }
 });
 
 /**
@@ -175,18 +218,33 @@ gulp.task('live-reload', ['watch'], function() {
 
   settings.liveReload = true;
   // first, delete the index.html from the dist folder as we will copy it later
-  //del([settings.dist + 'index.html']);
+  del([settings.dist + 'index.html']);
 
   // add livereload script to the index.html
-//  gulp.src([settings.src + 'index.html'])
-//   .pipe(replace(/(\<\/body\>)/g, "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>$1"))
-//   .pipe(gulp.dest(settings.dist));
+  gulp.src([settings.src + 'index.html'])
+   .pipe(replace(/(\<\/body\>)/g, "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>$1"))
+   .pipe(gulp.dest(settings.dist));
    
   // Create LiveReload server
   livereload.listen();
 
   // Watch any files in dist/*, reload on change
   gulp.watch([settings.dist + '**']).on('change', livereload.changed);
+});
+
+
+/**
+ * Packaging all compiled resources. Due to the async nature of other tasks, this task cannot depend on build... do a build first and then package it.
+ */
+gulp.task('package', function(cb) {
+  var zip = require('gulp-zip'),
+  fileName = config.name + '-' + config.version + '.zip'
+
+  del(settings.dist+fileName);
+
+  return gulp.src([settings.dist+'**'], { base: './dist' })
+  .pipe(zip(fileName))
+  .pipe(gulp.dest('dist'));
 });
 
 
@@ -212,25 +270,49 @@ gulp.task('remove',['clean'], function(cb){
  */
 gulp.task('scripts-app', ['docs-js'], function() {
   var jshint = require('gulp-jshint'),
+      jscs = require('gulp-jscs'),
+      map = require('map-stream'),
       ngannotate = require('gulp-ng-annotate'),
       stripDebug = require('gulp-strip-debug'),
       stylish = require('jshint-stylish'),
       sourcemaps = require('gulp-sourcemaps'),
-      uglify = require('gulp-uglify');
+      uglify = require('gulp-uglify'),
+      exitOnJshintError = map(function (file, cb) {
+        if (!file.jshint.success) {
+          gutil.error('jshint failed');
+          process.exit(1);
+        }
+        cb();
+      });
 
   return gulp.src(settings.src + 'js/app/**/*.js')
-    .pipe(plumber(settings.plumberConfig()))
-    .pipe(ngannotate({gulpWarnings: false}))
-    .pipe(jshint())
+    // .pipe(plumber())
+    .pipe(jscs({
+      preset: "node-style-guide", 
+      verbose: true,
+      // disable or change rules
+      "requireTrailingComma": null,
+      "validateLineBreaks": null,
+      "disallowTrailingWhitespace": null,
+      "maximumLineLength": 120,
+      "disallowMultipleVarDecl": null
+    }))
+
+    .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter(stylish))
+    // .pipe(exitOnJshintError)
+
+    .pipe(ngannotate({gulpWarnings: false}))
     .pipe(concat('app.js'))
     .pipe(gulp.dest(settings.dist + 'js'))
+    
     // make minified 
     .pipe(rename({suffix: '.min'}))
     .pipe(gulpif(!argv.dev, stripDebug()))
     .pipe(sourcemaps.init())
     .pipe(gulpif(!argv.dev, uglify()))
     .pipe(sourcemaps.write())
+    .pipe(size({"showFiles":true}))
     .pipe(gulp.dest(settings.dist + 'js'));
 });
 
@@ -239,8 +321,14 @@ gulp.task('scripts-app', ['docs-js'], function() {
  * Task to handle all vendor specific javasript. All vendor javascript will be copied to the dist directory. Also a concatinated version will be made, available in \dist\js\vendor\vendor.js
  */
 gulp.task('scripts-vendor', ['scripts-vendor-maps'], function() {
+  var flatten = require('gulp-flatten');
+  // mocks should be a separate file
+  gulp.src(settings.src + 'js/vendor/*/**/angular-mocks.js')
+    .pipe(flatten())
+    .pipe(gulp.dest(settings.dist + 'js/vendor'));
+
   // script must be included in the right order. First include angular, then angular-route
-  return gulp.src([settings.src + 'js/vendor/*/**/angular.min.js',settings.src + 'js/vendor/*/**/angular-route.min.js', settings.src + 'js/vendor/**/*.js'])
+  return gulp.src([settings.src + 'js/vendor/*/**/angular.min.js',settings.src + 'js/vendor/*/**/angular-route.min.js', "!"+settings.src + 'js/vendor/*/**/angular-mocks.js', settings.src + 'js/vendor/**/*.js'])
     .pipe(gulp.dest(settings.dist + 'js/vendor'))
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest(settings.dist + 'js/vendor'));
@@ -288,6 +376,7 @@ gulp.task('start', ['live-reload', 'server'], function(){});
  */
 gulp.task('styles', function() {
   var autoprefixer = require('gulp-autoprefixer'),
+      cmq = require('gulp-combine-media-queries'),
       minifycss = require('gulp-minify-css'),
       sass = require('gulp-sass');
 
@@ -299,11 +388,29 @@ gulp.task('styles', function() {
       sourceComments: argv.dev ? true : false
     }))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(cmq({log: true}))
     .pipe(gulp.dest(settings.dist + 'css'))
+
+    .pipe(size({"showFiles":true}))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
+    .pipe(cmq())
+    .pipe(size({"showFiles":true}))
     .pipe(gulp.dest(settings.dist + 'css'));
 });
+
+
+/**
+ * Run rests and keep watching changes for files
+ */
+gulp.task('test', function(done) {
+  var karma = require('karma').server;
+  karma.start({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done);
+});
+
 
 
 /**
@@ -319,14 +426,13 @@ gulp.task('todo', function() {
     .pipe( gulp.dest( settings.reports ) ) // output todo.json as json
 });
 
-
 /**
  * Watches changes to template, Sass, javascript and image files. On change this will run the appropriate task, either: copy styles, templates, scripts or images. 
  */
 gulp.task('watch', function() {
 
   // watch index.html
-  //gulp.watch(settings.src + 'index.html', ['copy-index']);
+  gulp.watch(settings.src + 'index.html', ['copy-index']);
 
   // watch html files
   gulp.watch(settings.src + '**/*.html', ['copy-template']);
@@ -347,9 +453,22 @@ gulp.task('watch', function() {
   gulp.watch(settings.src + 'img/**/*', ['images']);
 });
 
+
+/**
+ * Run rests and keep watching changes for files
+ */
+gulp.task('watch:test', function(done) {
+  var karma = require('karma').server;
+  karma.start({
+    configFile: __dirname + '/karma.conf.js'
+  }, done);
+});
+
+
 function onError(error){
   // TODO log error with gutil
   notify.onError(function (error) {
+    gutil.log(error);
     return error.message;
   });
   this.emit('end');

@@ -1,0 +1,104 @@
+$gulp-red: #CF4646;
+$white: #fff;
+$dark: #666;
+$black: #000;
+
+.fixed-title {
+    background: #fff;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+    height: 80px;
+    left: 0;
+    line-height: 80px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+
+    h2{
+      font-size: 3em;
+    }
+}
+
+body{
+  background-color: $gulp-red;
+}
+.task-list{
+  color: $white;
+  margin-top: 100px;
+}
+
+.task{
+
+  input[type=radio][name=toggle]{
+    display: none;
+  }
+
+  .task-header{
+    border-bottom: 1px solid $white;
+    text-align: center;
+
+    h2{
+      font-size: 3em;
+      text-indent: 1em;
+
+      label{
+        cursor: pointer;
+        display: block;
+        width: 100%;
+      }
+    }
+
+  }
+
+  .task-body{
+    background-color: $white;
+    color: $dark;
+    height: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: height 0.2s ease-out;
+
+    .task-body-inner{
+      margin: 0 auto;
+      min-width: 320px;
+      width: 50%;
+    }
+
+    input[type=text]{
+      border: none;
+      border-bottom: 1px dotted $dark;
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  input[type=radio][name=toggle]:checked ~ {
+
+    h2{
+      font-weight: 400;
+    }
+
+    .task-body{
+      height: 250px;
+    }
+  }
+  
+}
+
+.add-task-bar{
+  margin-top: 3em;
+
+  .add-task{
+    border: 1px solid $white;
+    border-radius: 50%;
+    color: $white;
+    display: block;
+    font-size: 2em;
+    font-weight: 300;
+    height: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    width: 3rem;
+  }
+}
