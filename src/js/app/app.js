@@ -11,7 +11,7 @@ var app = angular.module('skeleton', ['ngRoute'])
   $routeProvider
     .otherwise({
       controller: 'MainController',
-      templateUrl: '/js/app/modules/main/main.html'
+      templateUrl: '/js/app/modules/tasks/main.html'
     });
 
   $locationProvider.html5Mode('true');

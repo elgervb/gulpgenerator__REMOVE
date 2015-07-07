@@ -42,5 +42,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 /static/
+/reports/
+/dist/
 /node_modules/
 *.log

@@ -276,17 +276,10 @@ gulp.task('scripts-app', ['docs-js'], function() {
       stripDebug = require('gulp-strip-debug'),
       stylish = require('jshint-stylish'),
       sourcemaps = require('gulp-sourcemaps'),
-      uglify = require('gulp-uglify'),
-      exitOnJshintError = map(function (file, cb) {
-        if (!file.jshint.success) {
-          gutil.error('jshint failed');
-          process.exit(1);
-        }
-        cb();
-      });
+      uglify = require('gulp-uglify');
 
   return gulp.src(settings.src + 'js/app/**/*.js')
-    // .pipe(plumber())
+    .pipe(plumber())
     .pipe(jscs({
       preset: "node-style-guide", 
       verbose: true,
@@ -300,7 +293,6 @@ gulp.task('scripts-app', ['docs-js'], function() {
 
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter(stylish))
-    // .pipe(exitOnJshintError)
 
     .pipe(ngannotate({gulpWarnings: false}))
     .pipe(concat('app.js'))

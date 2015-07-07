@@ -86,6 +86,14 @@ body{
   
 }
 
+.dependencies{
+  color: $gulp-red;
+  margin-top: 1em;
+}
+.no-task-specs{
+  text-align: center;
+}
+
 .add-task-bar{
   margin-top: 3em;
 

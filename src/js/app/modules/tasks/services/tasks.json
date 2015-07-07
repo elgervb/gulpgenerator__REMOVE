@@ -5,7 +5,11 @@
     "description": "Cleans the `dist` folder",
     "dependencies": ["clear-cache"],
     "libs": ["del"],
-    "path": "./dist"
+    "fields": [{
+      "name": "path",
+      "value": "./dist",
+      "type": "text"
+    }]
   },
   {
     "type": "clear-cache",
@@ -20,8 +24,15 @@
     "description": "Copy all fonts to the destination directory",
     "dependencies": [],
     "libs": [],
-    "src": "./src/fonts/**",
-    "dest": "./dist/fonts"
+    "fields": [{
+      "name": "src",
+      "value": "./src/fonts/**",
+      "type": "text"
+      },{
+      "name": "dest",
+      "value": "./dist/fonts",
+      "type": "text"
+    }]
   },
   {
     "type": "copy",
@@ -29,8 +40,15 @@
     "description": "Copy all templates to the destination directory",
     "dependencies": [],
     "libs": [],
-    "src": "./src/app/**/*.html",
-    "dest": "./dist/app"
+    "fields": [{
+      "name": "src",
+      "value": "./src/app/**/*.html",
+      "type": "text"
+      },{
+      "name": "dest",
+      "value": "./dist/app",
+      "type": "text"
+    }]
   },
   {
     "type": "copy",
@@ -38,8 +56,15 @@
     "description": "Copy the index.html to the destination directory",
     "dependencies": [],
     "libs": [],
-    "src": "./src/index.html",
-    "dest": "./dist/"
+    "fields": [{
+      "name": "src",
+      "value": "./src/index.html",
+      "type": "text"
+      },{
+      "name": "dest",
+      "value": "/dist/",
+      "type": "text"
+    }]
   },
   {
     "type": "dependencies",
@@ -54,10 +79,23 @@
     "description": "Create Javascript documentation",
     "dependencies": ["todo"],
     "libs": ["gulp-doxx"],
-    "src": "./js/**/*.js",
-    "dest": "./dist",
-    "title": "Javascript Doxx",
-    "urlPrefix": "./reports"
+    "fields": [{
+      "name": "src",
+      "value": "./js/**/*.js",
+      "type": "text"
+      },{
+      "name": "dest",
+      "value": "./reports",
+      "type": "text"
+    },{
+      "name": "title",
+      "value": "Javascript Doxx",
+      "type": "text"
+    },{
+      "name": "urlPrefix",
+      "value": "./reports",
+      "type": "text"
+    }]
   },
   {
     "type": "todo",
@@ -65,8 +103,15 @@
     "description": "Generate TODO's for all javascript",
     "dependencies": [],
     "libs": ["gulp-todo"],
-    "src": "./js/app/**/*.js",
-    "dest": "./reports"
+    "fields": [{
+      "name": "src",
+      "value": "./js/app/**/*.js",
+      "type": "text"
+      },{
+      "name": "dest",
+      "value": "./reports",
+      "type": "text"
+    }]
   },
   {
     "type": "info",

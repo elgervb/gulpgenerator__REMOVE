@@ -1,0 +1,40 @@
+  <nav class="fixed-title">
+    <h2>Gulpfile generator</h2>
+  </nav>
+
+
+  <div class="task-list">
+
+    <div class="task" ng-repeat="(key, task) in tasks">
+      <input type="radio" name="toggle" id="{{task.name}}" />
+
+      <div class="task-header">
+        <h2><label for="{{task.name}}">{{task.name}}</label></h2>
+
+        <h3>{{task.description}}</h3>
+      </div>
+
+      <div class="task-body">
+        <div class="task-body-inner">
+          <div class="field" ng-repeat="(key, field) in task.fields">
+            <label>{{field.name}}</label>
+            <input type="{{field.type}}" placeholder="{{field.name}}" value="{{field.value}}"/>
+          </div>
+        
+          <h3 class="dependencies" ng-show="task.dependencies.length">Dependencies</h3>
+          <ul ng-repeat="(key, dependency) in task.dependencies">
+            <li>{{dependency}}</li>
+          </ul>
+
+          <h3 class="no-task-specs" ng-hide="task.dependencies.length+task.fields.length">No specs for this task</h3>
+
+        </div>
+      </div>
+
+    </div>  
+
+  </div>
+
+  <div class="add-task-bar">
+    <a class="add-task">+</a>
+  </div>
