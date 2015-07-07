@@ -110,3 +110,35 @@ body{
     width: 3rem;
   }
 }
+
+.overlay {
+  background: rgba(255,255,255,.8);
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+
+  .close-button{
+    border: 2px solid $dark;
+    border-radius: 50%;
+    color: $dark;
+    display: block;
+    font-size: 2em;
+    font-weight: 500;
+    height: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    width: 3rem;
+    position: absolute;
+    
+    right: .5em;
+    top: 5px;
+
+    &:hover{
+      transform: rotate(360deg);
+    }
+  }
+}
