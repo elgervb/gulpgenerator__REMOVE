@@ -21,17 +21,24 @@
 }
 
 .gulp-subtitle{
-  animation: fadeIn .5s ease-in .1s 1, slideInUp .5s ease-in .1s;
+  opacity: 0;
+  animation:    fadeIn .5s ease-in .2s 1, 
+             slideInUp .5s ease-in .2s;
+  animation-fill-mode: forwards; // stay in last detected state (for opacity)
   font-size: 2em;
   margin-bottom: 50px;
+  
 }
 
 .btn-get-started{
-  animation: fadeIn .5s ease-in .1s 1, slideInUp .5s ease-in .1s;
+  animation:    fadeIn .8s ease-in .6s 1, 
+             slideInUp .8s ease-in .6s;
+  animation-fill-mode: forwards; // stay in last detected state (for opacity)
   background-color: $white;
   border: 1px solid $white;
   border-radius: 3px;
   font-size: 1.4em;
+  opacity: 0;
   padding: 15px 20px 16px;
   transition: all 0.4s ease 0s;
 
