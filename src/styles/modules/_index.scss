@@ -12,18 +12,18 @@
 }
 
 .gulp-title{
-  animation: fadeIn .5s ease-in .1s 1, slideInUp .5s ease-in .1s;
   font-family: "Fineliner Script", "Open Sans";
   font-size: 6em;
   font-weight: 300;
-  margin-bottom: 15px;
+  line-height: 1em;
+  margin-bottom: 10px;
   text-shadow: none;
 }
 
 .gulp-subtitle{
   animation: fadeIn .5s ease-in .1s 1, slideInUp .5s ease-in .1s;
   font-size: 2em;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .btn-get-started{
