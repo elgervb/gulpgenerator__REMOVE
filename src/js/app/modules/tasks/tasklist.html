@@ -1,16 +1,15 @@
   <nav class="fixed-title">
-    <h2>tasks</h2>
+    <h2>tasks </h2>
   </nav>
 
 
   <div class="task-list">
 
   <!-- iterate through the all tasks -->
-    <div class="task" ng-repeat="(key, task) in tasks">
-      <input type="radio" name="toggle" id="{{task.name}}" />
+    <div class="task" ng-repeat="(key, task) in tasks" ng-class="{toggled: toggled==task.name}">
 
       <div class="task-header">
-        <h2><label for="{{task.name}}">{{task.name}}</label></h2>
+        <h2 ng-click="toggle(task)">{{task.name}}</h2>
 
         <h3>{{task.description}}</h3>
       </div>
@@ -27,6 +26,7 @@
             <input ng-show="editmode" type="{{field.type}}" placeholder="{{field.name}}" value="{{field.value}}" />
           </div>
         
+          <!-- Show a list of dependencies -->
           <h3 class="dependencies" ng-show="task.dependencies.length">Dependencies</h3>
           <ul ng-repeat="(key, dependency) in task.dependencies">
             <li>{{dependency}}</li>
