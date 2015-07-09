@@ -13,7 +13,7 @@ var app = angular.module('skeleton', ['ngRoute'])
       controller: 'IndexController',
       templateUrl: '/js/app/modules/index/index.html'
     })
-    .when('/generator',{
+    .when('/generator', {
       controller: 'TasksController',
       templateUrl: '/js/app/modules/tasks/tasklist.html'
     });
