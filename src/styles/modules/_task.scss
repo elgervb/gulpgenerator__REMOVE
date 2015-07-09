@@ -1,6 +1,6 @@
 
 .fixed-title {
-    background: #fff;
+    background: $white;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
     height: 80px;
     left: 0;
@@ -13,12 +13,18 @@
 
     h2{
       font-size: 3em;
+      font-weight: 500;
       color: $font-color;
     }
 }
 
 .task-list{
-  margin-top: 100px;
+  background: $white;
+  color: $dark;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+  margin: 100px auto 0;
+  max-width: 850px;
+  padding: 20px;
 }
 
 .task{
@@ -28,12 +34,12 @@
   }
 
   .task-header{
-    border-bottom: 1px solid $white;
+    border-bottom: 1px solid #e3e3e3;
+    color: $black;
     text-align: center;
 
     h2{
       font-size: 3em;
-      text-indent: 1em;
 
       label{
         cursor: pointer;
@@ -81,6 +87,8 @@
 
     .task-body{
       height: 250px;
+      min-height: 250px;
+      overflow: auto;
     }
   }
   
