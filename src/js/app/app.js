@@ -9,9 +9,13 @@ var app = angular.module('skeleton', ['ngRoute'])
 .config(function($routeProvider, $locationProvider) {
   
   $routeProvider
-    .otherwise({
-      controller: 'MainController',
-      templateUrl: '/js/app/modules/tasks/main.html'
+    .when('/', {
+      controller: 'IndexController',
+      templateUrl: '/js/app/modules/index/index.html'
+    })
+    .when('/generator',{
+      controller: 'TasksController',
+      templateUrl: '/js/app/modules/tasks/tasklist.html'
     });
 
   $locationProvider.html5Mode('true');

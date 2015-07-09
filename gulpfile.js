@@ -458,10 +458,5 @@ gulp.task('watch:test', function(done) {
 
 
 function onError(error){
-  // TODO log error with gutil
-  notify.onError(function (error) {
-    gutil.log(error);
-    return error.message;
-  });
-  this.emit('end');
+  gutil.log(error);
 }

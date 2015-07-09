@@ -1,7 +1,3 @@
-$gulp-red: #CF4646;
-$white: #fff;
-$dark: #666;
-$black: #000;
 
 .fixed-title {
     background: #fff;
@@ -17,14 +13,11 @@ $black: #000;
 
     h2{
       font-size: 3em;
+      color: $font-color;
     }
 }
 
-body{
-  background-color: $gulp-red;
-}
 .task-list{
-  color: $white;
   margin-top: 100px;
 }
 
