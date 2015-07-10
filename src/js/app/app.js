@@ -17,7 +17,7 @@ var app = angular.module('skeleton', ['ngRoute'])
       controller: 'NewGulpfileController',
       templateUrl: '/js/app/modules/new/new.html'
     })
-    .when('/generator', {
+    .when('/generator/:name', {
       controller: 'TaskListController',
       templateUrl: '/js/app/modules/tasks/tasklist.html'
     });

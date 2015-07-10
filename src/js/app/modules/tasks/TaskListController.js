@@ -1,7 +1,7 @@
 /**
  * Main controller
  */
-app.controller('TaskListController', function($scope, TaskService, SharedData) {
+app.controller('TaskListController', function($scope, $routeParams, TaskService, SharedData) {
 
   TaskService.getTasks().then(function(response) {
     $scope.tasks = response.data.task;

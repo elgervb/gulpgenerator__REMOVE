@@ -6,7 +6,7 @@ app.controller('NewGulpfileController', function($scope, $location, SharedData) 
   $scope.$watch('package.name', function(newValue, oldValue) {
     if (newValue && newValue !== oldValue) {
       var cache = SharedData.load($scope.package.name);
-      if (cache){
+      if (cache) {
         $scope.package = cache;
       }
     }
@@ -15,7 +15,7 @@ app.controller('NewGulpfileController', function($scope, $location, SharedData) 
   $scope.continue = function() {
     SharedData.store();
 
-    $location.path('/generator');
+    $location.path('/generator/' + $scope.package.name);
   };
 
 });
