@@ -3,7 +3,8 @@ app.service('SharedData', function(StorageService) {
   var package = {
     settings: {
       src: './src',
-      dist: './dist'
+      dist: './dist',
+      report: './report'
     }
     
   },
