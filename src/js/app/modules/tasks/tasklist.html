@@ -10,8 +10,7 @@
 
       <div class="task-header">
         <h2 ng-click="toggle(task)">
-          <span ng-show="!scope.editmode">{{task.name}}</span>
-          <input ng-show="scope.editmode" type="text" placeholder="{{task.name}}" ng-model="task.name" />
+          <a>{{task.name}}</a>
         </h2>
 
         <h3>{{task.description}}</h3>
@@ -26,7 +25,7 @@
 
             <!-- Show edit or read only field -->
             <span ng-show="!scope.editmode">{{field.value}}</span>
-            <input ng-show="scope.editmode" type="{{field.type}}" placeholder="{{field.name}}" value="{{field.value}}" />
+            <input ng-show="scope.editmode" type="{{field.type}}" placeholder="{{field.name}}" ng-model="field.value" />
           </div>
         
           <!-- Show a list of dependencies -->
@@ -38,8 +37,8 @@
           <h3 class="no-task-specs" ng-hide="task.dependencies.length+task.fields.length">No specs for this task</h3>
 
           <!-- Edit mode for this task -->
-          <a class="edit-toggle" ng-show="!scope.editmode" ng-click="scope.editmode=!scope.editmode">Edit</a>
-          <a class="edit-toggle" ng-show="scope.editmode" ng-click="scope.editmode=!scope.editmode">Close</a>
+          <a class="edit-toggle edit-btn" ng-show="!scope.editmode" ng-click="scope.editmode=!scope.editmode">+</a>
+          <a class="edit-toggle abs-btn close-btn" ng-show="scope.editmode" ng-click="scope.editmode=!scope.editmode">&times;</a>
 
         </div>
       </div>
@@ -54,10 +53,10 @@
 
   <div class="add-task">
 
-  <div class="overlay" ng-show="showAdd">
-    
-    <a class="close-button" ng-click="showAdd=false">&times;</a>
+    <div class="overlay" ng-show="showAdd">
+      
+      <a class="abs-btn" ng-click="showAdd=false">&times;</a>
 
-  </div>
+    </div>
 
   </div>

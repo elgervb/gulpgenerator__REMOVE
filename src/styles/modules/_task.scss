@@ -37,10 +37,13 @@
     h2{
       cursor: pointer;
       font-size: 3em;
-    }
-
-    input[type=text]{
-      text-align: center;
+    
+      a{
+        color: $dark;
+      }
+      &:hover a{
+        border-bottom: 1px solid $dark;
+      }
     }
   }
 
@@ -53,6 +56,18 @@
     position: relative;
     transition: max-height .2s ease;
 
+    .close-btn, .edit-btn{
+      font-size: 1.5em;
+      height: 2rem;
+      line-height: 2rem;
+      width: 2rem;
+    }
+    .edit-btn{
+      background: transparent url(../img/edit.png) no-repeat scroll center center / cover;
+      opacity: 0.7;
+      text-indent: -9999999px;
+    }
+
     .task-body-inner{
       margin: 0 auto;
       min-width: 320px;
@@ -62,6 +77,7 @@
     .field label{
       width: 150px;
     }
+
     .field input[type=text]{
       border: none;
       border-bottom: 1px dotted $dark;
@@ -76,13 +92,17 @@
     }
   }
 
-  &.toggled{ 
+  &.toggled{
+    background-color: #F0F0F0;
+
     h2{
       font-weight: 400;
     }
 
     .task-body{
+      border: 1px solid #F0F0F0;
       max-height: 250px;
+      padding-bottom: 3em;
     }
   }
   
@@ -122,8 +142,9 @@
   top: 0;
   width: 100%;
   z-index: 9999999;
+}
 
-  .close-button{
+.abs-btn{
     border: 2px solid $dark;
     border-radius: 50%;
     color: $dark;
@@ -131,16 +152,15 @@
     font-size: 2em;
     font-weight: 500;
     height: 3rem;
+    line-height: 3rem;
     margin: 0 auto;
-    text-align: center;
-    width: 3rem;
     position: absolute;
-    
     right: .5em;
+    text-align: center;
     top: 5px;
+    width: 3rem;
 
     &:hover{
       transform: rotate(360deg);
     }
   }
-}
