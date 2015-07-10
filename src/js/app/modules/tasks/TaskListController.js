@@ -1,7 +1,7 @@
 /**
  * Main controller
  */
-app.controller('TasksController', function($scope, TaskService) {
+app.controller('TaskListController', function($scope, TaskService) {
 
   TaskService.getTasks().then(function(response) {
     $scope.tasks = response.data.task;
@@ -14,11 +14,11 @@ app.controller('TasksController', function($scope, TaskService) {
    * Toggle a task and show the task body
    */
   $scope.toggle = function(task) {
-    if ($scope.toggled === task.name) {
+    if ($scope.toggled === task) {
       delete $scope.toggled;
       delete $scope.scope.editmode;
     } else {
-      $scope.toggled = task.name;
+      $scope.toggled = task;
     }
     
   };

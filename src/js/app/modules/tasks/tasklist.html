@@ -6,7 +6,7 @@
   <div class="task-list">
 
   <!-- iterate through the all tasks -->
-    <div class="task" ng-repeat="(key, task) in tasks" ng-class="{toggled: toggled==task.name}">
+    <div class="task" ng-repeat="(key, task) in tasks" ng-class="{toggled: toggled==task}">
 
       <div class="task-header">
         <h2 ng-click="toggle(task)">

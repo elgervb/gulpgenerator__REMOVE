@@ -1,0 +1,61 @@
+
+
+  <form class="new-gulpfile" name="form" novalidate>
+
+    <div class="group">
+      <h2>Application</h2>
+      <div class="field">
+        <label for="name">Name *</label>
+        <input type="text" id="name" placeholder="name of the application" ng-model="package.name" autofocus required/> 
+      </div>
+      <div class="field">
+        <label for="description">Description *</label>
+        <textarea id="description" placeholder="description of the application" ng-model="package.description" required></textarea> 
+      </div>
+    </div>
+
+    <div class="group" ng-show="package.name&&package.description">
+      <h3>Repository</h3>
+      <div class="field">
+        <label for="repository_type">Repository type</label>
+        <input type="text" id="repository_type" placeholder="repository type (eg. git)" ng-model="package.repository.type" /> 
+      </div>
+      <div class="field">
+        <label for="repository_url">Repository url</label>
+        <input type="url" id="repository_url" placeholder="repository url" ng-model="package.repository.url" /> 
+      </div>
+    </div>
+
+    <div class="group" ng-show="package.name&&package.description">
+      <h3>Author</h3>
+      <div class="field">
+        <label for="autor_name">Author name</label>
+        <input type="text" id="autor_name" placeholder="author name" ng-model="package.author.name" /> 
+      </div>
+      <div class="field">
+        <label for="autor_mail">Author mail</label>
+        <input type="email" id="autor_mail" placeholder="author mail" ng-model="package.author.mail" /> 
+      </div>
+      <div class="field">
+        <label for="autor_url">Author website</label>
+        <input type="url" id="autor_url" placeholder="author website" ng-model="package.author.url" /> 
+      </div>
+    </div>
+
+    <div class="group" ng-show="package.name&&package.description">
+      <h3>Settings</h3>
+      <div class="field">
+        <label for="settings_src">Source directory</label>
+        <input type="text" id="settings_src" placeholder="default source directory" ng-model="package.settings.src" /> 
+      </div>
+      <div class="field">
+        <label for="settings_dist">Destination directory</label>
+        <input type="text" id="settings_dist" placeholder="default destination directory" ng-model="package.settings.dist" /> 
+      </div>
+    </div>
+
+    <div class="field">
+      <a class="btn-cancel btn-link" href="/#/">Cancel</a>
+      <a class="btn-save" ng-disabled="!form.$valid" href="#generator">Continue</a>
+    </div>
+  </form>

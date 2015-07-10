@@ -1,0 +1,41 @@
+.new-gulpfile{
+  display: block;
+  margin: 100px auto 0;
+  max-width: 850px;
+  text-align: center;
+  width: 100%;
+
+  .group{
+    margin-bottom: 4rem;
+  }
+
+  label{
+    text-align: right;
+  }
+
+  .field input, .field textarea{
+    // TODO fix this in _forms.scss for selector .field input:empty, .field input:required:invalid, .field textarea:empty, .field textarea:required:invalid
+    border: none !important;
+    border-bottom: 1px dotted $white !important;
+    background-color: transparent;
+    color: $white;
+  }
+  .field textarea{
+    height: 8rem;
+    max-height: 16rem;
+    resize: vertical;
+  }
+  .btn-cancel{
+    color: $white;
+    &:hover{
+      border-bottom-color: $white;
+    }
+  }
+  .btn-save{
+    background-color: $white;
+  }
+
+  ::placeholder{
+    color:$white;
+  }
+}
