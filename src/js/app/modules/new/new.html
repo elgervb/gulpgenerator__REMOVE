@@ -6,7 +6,7 @@
       <h2>Application</h2>
       <div class="field">
         <label for="name">Name *</label>
-        <input type="text" id="name" placeholder="name of the application" ng-model="package.name" autofocus required/> 
+        <input type="text" id="name" placeholder="name of the application" ng-model="package.name" ng-model-options="{updateOn:'blur'}" autofocus required/> 
       </div>
       <div class="field">
         <label for="description">Description *</label>
@@ -56,6 +56,6 @@
 
     <div class="field">
       <a class="btn-cancel btn-link" href="/#/">Cancel</a>
-      <a class="btn-save" ng-disabled="!form.$valid" href="#generator">Continue</a>
+      <button class="btn-save" ng-disabled="!form.$valid" ng-click="continue()">Continue</button>
     </div>
   </form>

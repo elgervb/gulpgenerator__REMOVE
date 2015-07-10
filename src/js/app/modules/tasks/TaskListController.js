@@ -1,7 +1,7 @@
 /**
  * Main controller
  */
-app.controller('TaskListController', function($scope, TaskService) {
+app.controller('TaskListController', function($scope, TaskService, SharedData) {
 
   TaskService.getTasks().then(function(response) {
     $scope.tasks = response.data.task;
@@ -9,6 +9,8 @@ app.controller('TaskListController', function($scope, TaskService) {
 
   $scope.scope = {};
   $scope.scope.editmode = false;
+
+  $scope.scope.data = SharedData;
 
   /**
    * Toggle a task and show the task body
