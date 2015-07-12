@@ -3,6 +3,7 @@
 	<name>gulpgenerator</name>
 	<comment></comment>
 	<projects>
+		<project>compact</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
