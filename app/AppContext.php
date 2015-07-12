@@ -57,6 +57,8 @@ class AppContext implements IAppContext
      */
     public function services(Context $ctx)
     {
-        //
+        if ($ctx->isLocal()){
+            $ctx->http()->getResponse()->setCORSHeaders();
+        }
     }
 }
