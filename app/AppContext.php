@@ -6,6 +6,8 @@ use compact\Context;
 use compact\routing\Router;
 use compact\mvvm\impl\ViewModel;
 use gulp\GulpTasks;
+use gulp;
+use compact\handler\impl\json\JsonHandler;
 
 /**
  * The Application Context
@@ -22,7 +24,21 @@ class AppContext implements IAppContext
      */
     public function routes(Router $router)
     {
-        $router->add("^/$", function(){
+        // Enable CORS preflight request
+        $router->add('.*', function() {
+            // allow CORS
+            Context::get()->http()->getResponse()->setCORSHeaders();
+            return " ";
+        }, 'OPTIONS');
+        
+        /**
+         * Add a new gulpfile
+         */
+        $router->add("^/gulpfile$", function(){
+        	return \gulp\GulpfileController::get()->post();
+        }, 'POST');
+        
+        $router->add("^/generator$", function(){
             $g = new GulpTasks();
         	return "<pre>".$g->generate()."</pre>";
         });
@@ -47,7 +63,8 @@ class AppContext implements IAppContext
      */
     public function handlers(Context $ctx)
     {
-        //
+        // Handle all JSON responses
+        $ctx->addHandler(new JsonHandler());
     }
 
     /**
