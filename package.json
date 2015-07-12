@@ -1,5 +1,5 @@
 {
-  "name": "skeletonSPA",
+  "name": "gulpgenerator",
   "version": "1.0.0",
   "description": "Gulp generator",
   "main": "gulpfile.js",
