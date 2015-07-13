@@ -19,7 +19,7 @@ class GulpfileController
      * 
      * @return GulpfileController
      */
-    public static function get(){
+    public static function instance(){
         if (self::$instance === null){
             self::$instance = new GulpfileController();
         }
@@ -32,10 +32,36 @@ class GulpfileController
      * 
      * @return \compact\repository\IModelRepository
      */
-    private function createDb($id){
-        assert(strlen($id) > 10);
+    private function createDb($guid){
+        assert(strlen($guid) > 10);
         
-        return new JsonRepository(new DefaultModelConfiguration(), Context::get()->basePath('app/db/'.$id.".json"));
+        return new JsonRepository(new DefaultModelConfiguration(), Context::get()->basePath('app/db/'.$guid.".json"));
+    }
+    
+    /**
+     * Returns all links or just one when the GUID has been set
+     *
+     * @param $guid [optional]
+     *            The guid of the link
+     *
+     * @return HttpStatus 200 | 204 //
+     *         200 with JSON of one model when $guid not is null else it will return a resultset with models
+     *         204 no content when there are no models in the database or the id is not known
+     */
+    public function get($guid)
+    {
+        $db = $this->createDb($guid);
+        $sc = $db->createSearchCriteria();
+    
+        if ($guid) {
+            $sc->where("guid", $guid);
+        }
+    
+        $result = $db->search($sc);
+        if ($result->count() > 0) {
+            return new HttpStatus(HttpStatus::STATUS_200_OK, new Json($result));
+        }
+        return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
     }
     
     /**
@@ -55,7 +81,7 @@ class GulpfileController
         
         // TODO implement 409
         $model = ModelUtils::getPostForDynamicModel(new Model());
-$model->guid = $guid;
+
         $isEmpty = true;
         foreach ($model as $key => $value){
             $isEmpty = false;

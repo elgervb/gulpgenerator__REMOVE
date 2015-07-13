@@ -16,7 +16,12 @@ use compact\handler\impl\json\JsonHandler;
  */
 class AppContext implements IAppContext
 {
-
+    /**
+     * Regex to match a guid: 4ddb9da0-a641-471d-a926-221a7a33b0ec
+     * @var string
+     */
+    const GUID_REGEX = "[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}";
+    
     /**
      * (non-PHPdoc)
      *
@@ -32,10 +37,19 @@ class AppContext implements IAppContext
         }, 'OPTIONS');
         
         /**
+         * Get an existing gulpfile
+         * 
+         * url /gulpfile/2191B876-84A0-DB62-FBBD-8BD9D0584887
+         */
+        $router->add("^/gulpfile/(".self::GUID_REGEX.")$", function($guid){
+            return \gulp\GulpfileController::instance()->get($guid);
+        }, 'GET');
+        
+        /**
          * Add a new gulpfile
          */
         $router->add("^/gulpfile$", function(){
-        	return \gulp\GulpfileController::get()->post();
+        	return \gulp\GulpfileController::instance()->post();
         }, 'POST');
         
         $router->add("^/generator$", function(){
