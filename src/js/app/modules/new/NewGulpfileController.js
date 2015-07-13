@@ -5,29 +5,16 @@
  */
 app.controller('NewGulpfileController', function($scope, $http, $location, SharedData, BaseUrl) {
 
-  $scope.package = SharedData.package;
+  $scope.package = SharedData.load();
 
   function handleError() {
     console.error('Failed to add gulpfile details (' + status + ')');
   }
 
   /**
-   * When the user entered a name for the gulpfile, then the right cached version will be loaded
-   */
-  $scope.$watch('package.name', function(newValue, oldValue) {
-    if (newValue && newValue !== oldValue) {
-      var cache = SharedData.load($scope.package.name);
-      if (cache) {
-        $scope.package = cache;
-      }
-    }
-  });
-
-  /**
    * Continue to the next page: generator where the user can add, edit or delete tasks
    */
   $scope.continue = function() {
-    
 
     $http.post(BaseUrl + 'gulpfile', $scope.package).then(function(response, status, headers, config) {
       if (response.status === 201) { // Created

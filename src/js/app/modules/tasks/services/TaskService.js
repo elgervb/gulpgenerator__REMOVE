@@ -1,9 +1,9 @@
-app.service('TaskService', function($http) {
+app.service('TaskService', function($http, BaseUrl) {
 
   var getTasks = function() {
     return $http({
       method: 'get',
-      url: 'js/app/modules/tasks/services/tasks.json'
+      url: BaseUrl + 'tasks'
     });
   };
 

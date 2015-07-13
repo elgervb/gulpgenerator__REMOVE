@@ -52,6 +52,13 @@ class AppContext implements IAppContext
         	return \gulp\GulpfileController::instance()->post();
         }, 'POST');
         
+        /**
+         * Returns all predefined tasks
+         */
+        $router->add("^/tasks$", function(){
+        	return \gulp\GulpfileController::instance()->getTasks();
+        }, 'GET');
+        
         $router->add("^/generator$", function(){
             $g = new GulpTasks();
         	return "<pre>".$g->generate()."</pre>";

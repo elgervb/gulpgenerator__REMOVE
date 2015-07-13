@@ -108,4 +108,13 @@ class GulpfileController
         Logger::get()->logWarning("Could not save model " . get_class($model));
         return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
     }
+    
+    /**
+     * Returns all predefined tasks
+     * 
+     * @return \compact\handler\impl\json\Json
+     */
+    public function getTasks(){
+        return new Json(json_decode(file_get_contents(__DIR__ . "/tasks/tasks.json")));
+    }
 }

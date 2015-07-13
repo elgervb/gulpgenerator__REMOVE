@@ -27,6 +27,16 @@
   padding: 20px;
 }
 
+.predefined{
+  background-color: $white;
+  color: $dark;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+  margin: 100px auto 0;
+  max-width: 850px;
+  padding: 20px;
+  z-index: 1000;
+}
+
 .task{
 
   .task-header{
@@ -134,20 +144,19 @@
 }
 
 .overlay {
-  background: rgba(255,255,255,.8);
+  background-color: rgba(207, 70, 70, .8);
   display: block;
-  height: 100%;
   left: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
-  z-index: 9999999;
+  z-index: 999;
 }
 
 .abs-btn{
-    border: 2px solid $dark;
+    border: 2px solid $white;
     border-radius: 50%;
-    color: $dark;
+    color: $white;
     display: block;
     font-size: 2em;
     font-weight: 500;

@@ -28,10 +28,10 @@ class GulpTasks
      */
     public function generate(){
         
-        $json = self::convertToModel(json_decode(file_get_contents(__DIR__ . "/tasks/tasks.json")));
+        $json = self::getTasks();
         $template = new ViewModel(__DIR__ . "/tasks/_template.txt");
         $result = "";
-        foreach($json->task as $task){
+        foreach($json->tasks as $task){
             $t = clone $template;
             
             self::copyToView($task, $t);
@@ -43,6 +43,15 @@ class GulpTasks
         }
         
         return $result;
+    }
+    
+    /**
+     * Returns all tasks as models
+     * 
+     * @return array with models
+     */
+    public static function getTasks(){
+        return self::convertToModel(json_decode(file_get_contents(__DIR__ . "/tasks/tasks.json")));
     }
     
     /**

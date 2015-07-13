@@ -1,5 +1,5 @@
 {
-  "task":[{
+  "tasks":[{
     "type": "clean",
     "name": "clear",
     "description": "Cleans the `dist` folder",

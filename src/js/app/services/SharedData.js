@@ -11,11 +11,14 @@ app.service('SharedData', function(StorageService) {
   gulpfile = {},
   store = function(obj) {
     package = obj;
-    StorageService.set(package.name, package);
+    StorageService.set(package.guid, package);
   },
-  load = function(key) {
-    console.log('loading data for key ' + key);
-    var obj = StorageService.get(key)
+  load = function(guid) {
+    if (package.guid === guid) {
+      return package;
+    }
+    console.log('loading data for guid ' + guid);
+    var obj = StorageService.get(guid)
     if (obj) {
       package = obj;
       return obj;
@@ -23,7 +26,6 @@ app.service('SharedData', function(StorageService) {
   };
 
   return {
-    package: package,
     store: store,
     load: load
   }

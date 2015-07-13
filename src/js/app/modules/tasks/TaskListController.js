@@ -3,14 +3,10 @@
  */
 app.controller('TaskListController', function($scope, $routeParams, TaskService, SharedData) {
 
-  TaskService.getTasks().then(function(response) {
-    $scope.tasks = response.data.task;
-  });
+  $scope.package = SharedData.load($routeParams.guid);
 
   $scope.scope = {};
   $scope.scope.editmode = false;
-
-  $scope.scope.data = SharedData;
 
   /**
    * Toggle a task and show the task body
@@ -22,7 +18,25 @@ app.controller('TaskListController', function($scope, $routeParams, TaskService,
     } else {
       $scope.toggled = task;
     }
-    
   };
+
+  $scope.addMode = function() {
+
+    if (!$scope.predefinedTasks) {
+      TaskService.getTasks().then(function(response) {
+        $scope.predefinedTasks = response.data.tasks;
+      });
+    }
+  };
+
+  $scope.select = function(task) {
+    if (!angular.isArray($scope.tasks)) {
+      $scope.tasks = [];
+    }
+    $scope.tasks.push(task);
+    $scope.toggle(task);
+    $scope.showAdd = false;
+  };
+  
 
 });

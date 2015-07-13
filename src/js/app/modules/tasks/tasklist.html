@@ -1,5 +1,5 @@
   <nav class="fixed-title">
-    <h2>tasks </h2>
+    <h2>tasks for {{package.name}}</h2>
   </nav>
 
 
@@ -48,7 +48,7 @@
   </div>
 
   <div class="add-task-bar">
-    <a class="add-task" ng-click="showAdd=!showAdd">+</a>
+    <a class="add-task" ng-click="showAdd=!showAdd; addMode();">+</a>
   </div>
 
   <div class="add-task">
@@ -56,6 +56,14 @@
     <div class="overlay" ng-show="showAdd">
       
       <a class="abs-btn" ng-click="showAdd=false">&times;</a>
+
+      <!-- iterate through the all tasks -->
+    <ul class="predefined">
+      <li ng-repeat="(key, task) in predefinedTasks" ng-click="select(task);"> 
+          <h2>{{task.type}}</h2> 
+          <p>{{task.description}}</p> 
+      </li>
+    </ul>
 
     </div>
 
