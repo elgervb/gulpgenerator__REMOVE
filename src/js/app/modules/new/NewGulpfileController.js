@@ -27,11 +27,14 @@ app.controller('NewGulpfileController', function($scope, $http, $location, Share
    * Continue to the next page: generator where the user can add, edit or delete tasks
    */
   $scope.continue = function() {
-    SharedData.store();
+    
 
     $http.post(BaseUrl + 'gulpfile', $scope.package).then(function(response, status, headers, config) {
       if (response.status === 201) { // Created
         $scope.package = response.data;
+        
+        SharedData.store($scope.package);
+
         $location.path('/generator/' + $scope.package.guid);
       } else {
         handleError();
