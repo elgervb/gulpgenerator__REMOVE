@@ -46,3 +46,4 @@ Temporary Items
 /dist/
 /node_modules/
 *.log
+app/db/*.json
