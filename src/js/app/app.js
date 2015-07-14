@@ -13,12 +13,12 @@ var app = angular.module('skeleton', ['ngRoute'])
       controller: 'IndexController',
       templateUrl: '/js/app/modules/index/index.html'
     })
-    .when('/new', {
+    .when('/gulpfile/new', {
       controller: 'NewGulpfileController',
       templateUrl: '/js/app/modules/new/new.html'
     })
-    .when('/generator/:guid', {
-      controller: 'TaskListController',
+    .when('/gulpfile/:guid', {
+      controller: 'GulpfileController',
       templateUrl: '/js/app/modules/tasks/tasklist.html'
     });
 

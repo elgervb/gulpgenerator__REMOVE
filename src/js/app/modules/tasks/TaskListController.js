@@ -1,7 +1,7 @@
 /**
  * Main controller
  */
-app.controller('TaskListController', function($scope, $routeParams, TaskService, SharedData) {
+app.controller('GulpfileController', function($scope, $routeParams, TaskService, SharedData) {
 
   $scope.package = SharedData.load($routeParams.guid);
 
@@ -47,7 +47,6 @@ app.controller('TaskListController', function($scope, $routeParams, TaskService,
     $scope.tasks.sort(function(a, b) {
       return a.name > b.name;
     });
-  };
-  
+  };  
 
 });

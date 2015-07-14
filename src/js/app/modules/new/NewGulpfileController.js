@@ -22,7 +22,7 @@ app.controller('NewGulpfileController', function($scope, $http, $location, Share
         
         SharedData.store($scope.package);
 
-        $location.path('/generator/' + $scope.package.guid);
+        $location.path('/gulpfile/' + $scope.package.guid);
       } else {
         handleError();
       }
