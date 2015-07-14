@@ -29,19 +29,24 @@ app.controller('TaskListController', function($scope, $routeParams, TaskService,
     }
   };
 
+  /**
+   * Select a predifined task and copy it to the gulpfile
+   */
   $scope.select = function(task) {
     if (!angular.isArray($scope.tasks)) {
       $scope.tasks = [];
     }
+
+    task = angular.copy(task);
+
     $scope.tasks.push(task);
     $scope.toggle(task, true); // Force toggle
     $scope.showAdd = false;
 
-    $scope.tasks.sort(function(a, b){
+    // Sort the list
+    $scope.tasks.sort(function(a, b) {
       return a.name > b.name;
     });
-
-    $scope.$apply();
   };
   
 
