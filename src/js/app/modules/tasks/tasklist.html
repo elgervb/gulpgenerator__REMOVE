@@ -58,7 +58,7 @@
 
       <!-- iterate through the all tasks -->
     <ul class="predefined">
-      <li ng-repeat="(key, task) in predefinedTasks" ng-click="select(task);"> 
+      <li ng-repeat="(key, task) in predefinedTasks" ng-click="select(task);" class="task"> 
           <h2>{{task.type}}</h2> 
           <p>{{task.description}}</p> 
       </li>

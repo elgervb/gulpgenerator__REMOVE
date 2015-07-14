@@ -35,6 +35,16 @@
   max-width: 850px;
   padding: 20px;
   z-index: 1000;
+
+  .task{
+    margin: 1em;
+    padding: .5em;
+    
+    &:hover{
+      background: #e3e3e3;
+      cursor: pointer;
+    }
+  }
 }
 
 .task{
