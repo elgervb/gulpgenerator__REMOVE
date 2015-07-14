@@ -77,6 +77,10 @@
       opacity: 0.7;
       text-indent: -9999999px;
     }
+    .close-btn{
+      border-color: $dark;
+      color: $dark;
+    }
 
     .task-body-inner{
       margin: 0 auto;
@@ -130,12 +134,12 @@
   margin-top: 3em;
 
   .add-task{
-    border: 1px solid $white;
+    border: 2px solid $white;
     border-radius: 50%;
     color: $white;
     display: block;
     font-size: 2em;
-    font-weight: 300;
+    font-weight: 500;
     height: 3rem;
     margin: 0 auto;
     text-align: center;
@@ -151,9 +155,14 @@
   top: 0;
   width: 100%;
   z-index: 999;
+
+  .close-btn{
+    position: fixed;
+    top: .5em;
+  }
 }
 
-.abs-btn{
+.close-btn{
     border: 2px solid $white;
     border-radius: 50%;
     color: $white;

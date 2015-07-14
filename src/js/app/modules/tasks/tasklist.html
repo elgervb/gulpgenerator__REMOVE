@@ -38,7 +38,7 @@
 
           <!-- Edit mode for this task -->
           <a class="edit-toggle edit-btn" ng-show="!scope.editmode" ng-click="scope.editmode=!scope.editmode">+</a>
-          <a class="edit-toggle abs-btn close-btn" ng-show="scope.editmode" ng-click="scope.editmode=!scope.editmode">&times;</a>
+          <a class="edit-toggle close-btn" ng-show="scope.editmode" ng-click="scope.editmode=!scope.editmode">&times;</a>
 
         </div>
       </div>
@@ -52,10 +52,9 @@
   </div>
 
   <div class="add-task">
-
     <div class="overlay" ng-show="showAdd">
       
-      <a class="abs-btn" ng-click="showAdd=false">&times;</a>
+      <a class="close-btn" ng-click="showAdd=false">&times;</a>
 
       <!-- iterate through the all tasks -->
     <ul class="predefined">
