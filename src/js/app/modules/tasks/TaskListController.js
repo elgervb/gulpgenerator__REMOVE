@@ -11,8 +11,8 @@ app.controller('TaskListController', function($scope, $routeParams, TaskService,
   /**
    * Toggle a task and show the task body
    */
-  $scope.toggle = function(task) {
-    if ($scope.toggled === task) {
+  $scope.toggle = function(task, force) {
+    if (!force && $scope.toggled === task) {
       delete $scope.toggled;
       delete $scope.scope.editmode;
     } else {
@@ -34,8 +34,14 @@ app.controller('TaskListController', function($scope, $routeParams, TaskService,
       $scope.tasks = [];
     }
     $scope.tasks.push(task);
-    $scope.toggle(task);
+    $scope.toggle(task, true); // Force toggle
     $scope.showAdd = false;
+
+    $scope.tasks.sort(function(a, b){
+      return a.name > b.name;
+    });
+
+    $scope.$apply();
   };
   
 
