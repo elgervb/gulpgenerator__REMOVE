@@ -19,13 +19,13 @@
       <div class="task-body">
         <div class="task-body-inner">
           <!-- iterate through the configured fields -->
-          <div class="field" ng-repeat="(key, field) in task.fields">
+          <div class="field clearfix" ng-repeat="(key, field) in task.fields">
             
             <label>{{field.name}}</label>
 
             <!-- Show edit or read only field -->
-            <span ng-show="!scope.editmode">{{field.value}}</span>
-            <input ng-show="scope.editmode" type="{{field.type}}" placeholder="{{field.name}}" ng-model="field.value" />
+            <span ng-show="!scope.editmode" ng-bind="package.settings[field.name]"></span>
+            <input ng-show="scope.editmode" type="{{field.type}}" placeholder="{{field.name}}" ng-model="package.settings[field.name]" />
           </div>
         
           <!-- Show a list of dependencies -->
