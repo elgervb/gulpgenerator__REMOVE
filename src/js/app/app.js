@@ -12,7 +12,7 @@ var app = angular.module('gulpgenerator', ['ngRoute'])
   $routeProvider
     .when('/', {
       controller: 'IndexController',
-      templateUrl: '/js/app/index.html'
+      templateUrl: '/js/app/index/index.html'
     })
     // Route for creating a new Gulpfile
     .when('/gulpfile/new', {
