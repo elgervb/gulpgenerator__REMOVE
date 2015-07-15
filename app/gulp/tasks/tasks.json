@@ -2,8 +2,8 @@
   "tasks":[{
     "type": "clean",
     "name": "clear",
-    "description": "Cleans the `dist` folder",
-    "dependencies": ["clear-cache"],
+    "description": "Clears a folder. Removes all subdirectories and files from that folder.",
+    "dependencies": [],
     "libs": ["del"],
     "fields": [{
       "name": "path",
