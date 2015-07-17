@@ -39,9 +39,12 @@ app.controller('GulpfileController', function($scope, $routeParams, TaskService,
 
     task = angular.copy(task);
 
+
     $scope.tasks.push(task);
-    $scope.toggle(task, true); // Force toggle
+    $scope.toggle(task, true); // Force toggle to open the task
+    $scope.scope.editmode = true;
     $scope.showAdd = false;
+
 
     // Sort the list
     $scope.tasks.sort(function(a, b) {
