@@ -1,11 +1,19 @@
 app.service('SharedData', function(StorageService) {
 
+  /**
+   * Default settings for the package.json
+   */
   var package = {
     settings: {
       src: './src',
       dist: './dist',
       report: './report'
-    }
+    },
+    version: {
+        major: 0,
+        minor: 0,
+        patch: 1
+      }
     
   },
   gulpfile = {},

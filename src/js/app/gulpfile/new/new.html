@@ -14,6 +14,12 @@
         <label for="description">Description *</label>
         <textarea id="description" placeholder="description of the application" ng-model="package.description" required></textarea> 
       </div>
+       <div class="field">
+        <label for="version">version *</label>
+        <input type="text" id="version-major" class="version" placeholder="major" ng-model="package.version.major" ng-model-options="{updateOn:'blur'}" required/> .
+        <input type="text" id="version-minor" class="version" placeholder="minor" ng-model="package.version.minor" ng-model-options="{updateOn:'blur'}" required/> .
+        <input type="text" id="version-patch" class="version" placeholder="patch" ng-model="package.version.patch" ng-model-options="{updateOn:'blur'}" required/> 
+      </div>
     </div>
 
     <div class="group" ng-show="package.name&&package.description">

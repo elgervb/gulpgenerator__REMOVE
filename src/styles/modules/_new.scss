@@ -32,6 +32,9 @@
     max-height: 16rem;
     resize: vertical;
   }
+  .field .version{
+    width: 4.2em;
+  }
   .btn-cancel{
     color: $white;
     &:hover{

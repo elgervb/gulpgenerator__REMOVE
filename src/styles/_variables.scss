@@ -8,13 +8,14 @@ $gulp-red: #CF4646;
 $white: #fff;
 $dark: #666;
 $black: #000;
+$light-grey: #eeeeee;
 
 
 $light-regular: #f2f2f2;
 /**
  * Buttons
  */
-$btn-gray: #eeeeee;
+$btn-gray: $light-grey;
 $btn-red: #e74c3c;
 $btn-green: #00B16A;
 $btn-turquoise: #1abc9c;
