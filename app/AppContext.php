@@ -36,7 +36,7 @@ class AppContext implements IAppContext
             return " ";
         }, 'OPTIONS');
         
-        /**
+        /*
          * Get an existing gulpfile
          * 
          * url /gulpfile/2191B876-84A0-DB62-FBBD-8BD9D0584887
@@ -44,21 +44,24 @@ class AppContext implements IAppContext
         $router->add("^/gulpfile/(".self::GUID_REGEX.")$", function($guid){
             return \gulp\GulpfileController::instance()->get($guid);
         }, 'GET');
-        
-        /**
+       
+        /*
          * Add a new gulpfile
          */
         $router->add("^/gulpfile$", function(){
         	return \gulp\GulpfileController::instance()->post();
         }, 'POST');
         
-        /**
+        /*
          * Returns all predefined tasks
          */
         $router->add("^/tasks$", function(){
         	return \gulp\GulpfileController::instance()->getTasks();
         }, 'GET');
         
+        /*
+         * Generate the gulp task
+         */
         $router->add("^/generator$", function(){
             $g = new GulpTasks();
         	return "<pre>".$g->generate()."</pre>";
