@@ -142,18 +142,14 @@
 
 .add-task-bar{
   margin-top: 3em;
+  text-align: center;
 
-  .add-task{
-    border: 2px solid $white;
-    border-radius: 50%;
-    color: $white;
-    display: block;
-    font-size: 2em;
-    font-weight: 500;
-    height: 3rem;
-    margin: 0 auto;
-    text-align: center;
-    width: 3rem;
+  .add-btn{
+    margin-right: 1rem;
+  }
+  .add-btn, .generate-btn{
+    display: inline-block;
+    
   }
 }
 
@@ -173,20 +169,9 @@
 }
 
 .close-btn{
-    border: 2px solid $white;
-    border-radius: 50%;
-    color: $white;
-    display: block;
-    font-size: 2em;
-    font-weight: 500;
-    height: 3rem;
-    line-height: 3rem;
-    margin: 0 auto;
-    position: absolute;
-    right: .5em;
-    text-align: center;
-    top: 5px;
-    width: 3rem;
+  position: absolute;
+  right: .5em;
+  top: 5px;
 
     &:hover{
       transform: rotate(360deg);

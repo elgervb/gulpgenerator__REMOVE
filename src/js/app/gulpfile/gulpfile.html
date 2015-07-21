@@ -48,13 +48,14 @@
   </div>
 
   <div class="add-task-bar">
-    <a class="add-task" ng-click="showAdd=!showAdd; addMode();">+</a>
+    <a class="gulp-button add-btn" ng-click="showAdd=!showAdd; addMode();">+</a>
+    <a class="gulp-button generate-btn" href="/#/gulpfile/{{package.guid}}/generate" title="generate gulpfile">&rArr;</a>
   </div>
 
   <div class="add-task">
     <div class="overlay" ng-show="showAdd">
       
-      <a class="close-btn" ng-click="showAdd=false">&times;</a>
+      <a class="gulp-button close-btn" ng-click="showAdd=false">&times;</a>
 
       <!-- iterate through the all tasks -->
     <ul class="predefined">
