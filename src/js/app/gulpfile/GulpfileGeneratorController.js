@@ -5,12 +5,12 @@ app.controller('GulpfileGeneratorController', function($scope, $routeParams, $ht
 
   $scope.package = SharedData.load($routeParams.guid);
 
-  $scope.download = function(){
-    //$http.get(BaseUrl + 'generate/' + $routeParams.guid);
+  $scope.download = function() {
+    
     var iframe = document.createElement('iframe');
     iframe.classList.add('download-frame');
     iframe.src = BaseUrl + 'generate/' + $routeParams.guid;
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);  
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
   }
 });

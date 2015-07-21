@@ -1,7 +1,7 @@
 /**
  * Main controller
  */
-app.controller('GulpfileController', function($scope, $routeParams, TaskService, SharedData) {
+app.controller('GulpfileController', function($scope, $http, $routeParams, TaskService, SharedData, BaseUrl) {
 
   $scope.package = SharedData.load($routeParams.guid);
 
@@ -39,6 +39,8 @@ app.controller('GulpfileController', function($scope, $routeParams, TaskService,
 
     task = angular.copy(task);
 
+    // Add task
+    $http.put(BaseUrl + 'tasks/' + $routeParams.guid);
 
     $scope.tasks.push(task);
     $scope.toggle(task, true); // Force toggle to open the task
@@ -50,6 +52,6 @@ app.controller('GulpfileController', function($scope, $routeParams, TaskService,
     $scope.tasks.sort(function(a, b) {
       return a.name > b.name;
     });
-  };  
+  };
 
 });
