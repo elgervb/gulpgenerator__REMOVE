@@ -6,8 +6,8 @@
     "dependencies": [],
     "libs": ["del"],
     "fields": [{
-      "name": "path",
-      "value": "./dist",
+      "name": "dest",
+      "value": "",
       "type": "text"
     }]
   },
@@ -20,72 +20,40 @@
   },
   {
     "type": "copy",
-    "name": "copy-fonts",
-    "description": "Copy all fonts to the destination directory",
+    "name": "copy",
+    "description": "Copy all sources to the destination directory",
     "dependencies": [],
     "libs": [],
     "fields": [{
       "name": "src",
-      "value": "./src/fonts/**",
+      "value": "",
       "type": "text"
       },{
       "name": "dest",
-      "value": "./dist/fonts",
-      "type": "text"
-    }]
-  },
-  {
-    "type": "copy",
-    "name": "copy-template",
-    "description": "Copy all templates to the destination directory",
-    "dependencies": [],
-    "libs": [],
-    "fields": [{
-      "name": "src",
-      "value": "./src/app/**/*.html",
-      "type": "text"
-      },{
-      "name": "dest",
-      "value": "./dist/app",
-      "type": "text"
-    }]
-  },
-  {
-    "type": "copy",
-    "name": "copy-index",
-    "description": "Copy the index.html to the destination directory",
-    "dependencies": [],
-    "libs": [],
-    "fields": [{
-      "name": "src",
-      "value": "./src/index.html",
-      "type": "text"
-      },{
-      "name": "dest",
-      "value": "/dist/",
+      "value": "",
       "type": "text"
     }]
   },
   {
     "type": "dependencies",
-    "name": "copy",
-    "description": "Copy all to the destination directory",
-    "dependencies": ["copy-fonts", "copy-template", "copy-index"],
+    "name": "dependencies",
+    "description": "Execute a list of dependencies",
+    "dependencies": [],
     "libs": []
   },
   {
     "type": "doxx",
     "name": "doxx",
     "description": "Create Javascript documentation",
-    "dependencies": ["todo"],
+    "dependencies": [],
     "libs": ["gulp-doxx"],
     "fields": [{
       "name": "src",
-      "value": "./js/**/*.js",
+      "value": "",
       "type": "text"
       },{
       "name": "dest",
-      "value": "./reports",
+      "value": "",
       "type": "text"
     },{
       "name": "title",
@@ -105,11 +73,11 @@
     "libs": ["gulp-todo"],
     "fields": [{
       "name": "src",
-      "value": "./js/app/**/*.js",
+      "value": "",
       "type": "text"
       },{
       "name": "dest",
-      "value": "./reports",
+      "value": "",
       "type": "text"
     }]
   },
