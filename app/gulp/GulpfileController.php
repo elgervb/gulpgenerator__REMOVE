@@ -11,6 +11,7 @@ use compact\repository\DefaultModelConfiguration;
 use compact\utils\Random;
 use compact\mvvm\impl\Model;
 use compact\handler\impl\download\Download;
+use compact\filesystem\exceptions\FileNotFoundException;
 class GulpfileController
 {
     private static $instance;
@@ -31,12 +32,24 @@ class GulpfileController
     /**
      * Creates a new reporitory to store the models in
      * 
+     * @param $guid The guid of the gulpfile
+     * @param createIfNotExists boolean to denote if the file should be created when it doesn't exists yet
+     *
+     * @throws FileNotFoundException when createIfNotExists = false (by default) and the file does not exist
+     * 
      * @return \compact\repository\IModelRepository
      */
-    private function createDb($guid){
+    private function createDb($guid, $createIfNotExists = false)
+    {
         assert(strlen($guid) > 10);
         
-        return new JsonRepository(new DefaultModelConfiguration(), Context::get()->basePath('app/db/'.$guid.".json"));
+        $filepath = Context::get()->basePath('app/db/'.$guid.'.json');
+        
+        if(!$createIfNotExists && !$filepath->isFile()){
+            throw new FileNotFoundException($filepath);
+        }
+        
+        return new JsonRepository(new DefaultModelConfiguration(), $filepath);
     }
     
     /**
@@ -78,7 +91,7 @@ class GulpfileController
     public function post()
     {
         $guid = Random::guid();
-        $db = $this->createDb($guid);
+        $db = $this->createDb($guid, true); // create new file
         
         // TODO implement 409
         $model = ModelUtils::getPostForDynamicModel(new Model());
@@ -108,6 +121,15 @@ class GulpfileController
         
         Logger::get()->logWarning("Could not save model " . get_class($model));
         return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
+    }
+    
+    public function addtask($guid){
+        
+        $db = $this->createDb($guid);
+        
+        $task = ModelUtils::getPostForDynamicModel(new Model());
+        
+        
     }
     
     /**
