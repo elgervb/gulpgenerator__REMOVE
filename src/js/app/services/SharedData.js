@@ -6,7 +6,7 @@ app.service('SharedData', function(StorageService) {
   var package = {
     settings: {
       src: './src',
-      dist: './dist',
+      dest: './dist',
       report: './report'
     },
     version: {
@@ -14,7 +14,6 @@ app.service('SharedData', function(StorageService) {
         minor: 0,
         patch: 1
       }
-    
   },
   gulpfile = {},
   store = function(obj) {
