@@ -10,6 +10,7 @@ use compact\repository\json\JsonRepository;
 use compact\repository\DefaultModelConfiguration;
 use compact\utils\Random;
 use compact\mvvm\impl\Model;
+use compact\handler\impl\download\Download;
 class GulpfileController
 {
     private static $instance;
@@ -116,5 +117,11 @@ class GulpfileController
      */
     public function getTasks(){
         return new Json(json_decode(file_get_contents(__DIR__ . "/tasks/tasks.json")));
+    }
+    
+    public function download($guid){
+        $g = new GulpTasks();
+        
+        return new Download($g->generate(), 'gulpfile.js', Download::DOWNLOAD_MIME_TYPE);
     }
 }

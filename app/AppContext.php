@@ -8,6 +8,8 @@ use compact\mvvm\impl\ViewModel;
 use gulp\GulpTasks;
 use gulp;
 use compact\handler\impl\json\JsonHandler;
+use compact\handler\impl\download\Download;
+use compact\handler\impl\download\DownloadHandler;
 
 /**
  * The Application Context
@@ -62,10 +64,9 @@ class AppContext implements IAppContext
         /*
          * Generate the gulp task
          */
-        $router->add("^/generator$", function(){
-            $g = new GulpTasks();
-        	return "<pre>".$g->generate()."</pre>";
-        });
+        $router->add("^/generate/(".self::GUID_REGEX.")$", function($guid){
+            return \gulp\GulpfileController::instance()->download($guid);
+        }, 'GET');
         
         /**
          * Errors
@@ -89,6 +90,9 @@ class AppContext implements IAppContext
     {
         // Handle all JSON responses
         $ctx->addHandler(new JsonHandler());
+        
+        // Handle downloads
+        $ctx->addHandler(new DownloadHandler());
     }
 
     /**
