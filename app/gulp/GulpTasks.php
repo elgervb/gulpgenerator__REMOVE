@@ -2,6 +2,7 @@
 namespace gulp;
 
 use compact\mvvm\impl\ViewModel;
+use compact\Context;
 
 class GulpTasks
 {
@@ -24,11 +25,13 @@ class GulpTasks
     /**
      * Generate the Gulp file
      * 
+     * @param $guid The guid of the gulpfile to generate
+     * 
      * @param string $configuration
      */
-    public function generate(){
+    public function generate($guid){
         
-        $json = self::getTasks();
+        $json = self::getTasks($guid);
         $template = new ViewModel(__DIR__ . "/tasks/_template.txt");
         $result = "";
         foreach($json->tasks as $task){
@@ -46,12 +49,20 @@ class GulpTasks
     }
     
     /**
-     * Returns all tasks as models
+     * Returns all tasks as models or all tasks for a particular gulpfile
      * 
      * @return array with models
      */
-    public static function getTasks(){
-        return self::convertToModel(json_decode(file_get_contents(__DIR__ . "/tasks/tasks.json")));
+    public static function getTasks($guid = null){
+        
+        if ($guid === null){
+            $file = __DIR__ . "/tasks/tasks.json";
+        }
+        else{
+            $file = Context::get()->basePath('app/db/'.$guid.'.json');
+        }
+        
+        return self::convertToModel(json_decode(file_get_contents($file)));
     }
     
     /**

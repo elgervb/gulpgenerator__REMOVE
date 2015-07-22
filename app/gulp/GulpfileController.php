@@ -12,52 +12,57 @@ use compact\utils\Random;
 use compact\mvvm\impl\Model;
 use compact\handler\impl\download\Download;
 use compact\filesystem\exceptions\FileNotFoundException;
+
 class GulpfileController
 {
+
     private static $instance;
-    
+
     /**
      * Returns the GulpfileController singleton
-     * 
+     *
      * @return GulpfileController
      */
-    public static function instance(){
-        if (self::$instance === null){
+    public static function instance()
+    {
+        if (self::$instance === null) {
             self::$instance = new GulpfileController();
         }
         
         return self::$instance;
     }
-    
+
     /**
      * Creates a new reporitory to store the models in
-     * 
-     * @param $guid The guid of the gulpfile
-     * @param createIfNotExists boolean to denote if the file should be created when it doesn't exists yet
      *
+     * @param $guid The
+     *            guid of the gulpfile
+     * @param
+     *            createIfNotExists boolean to denote if the file should be created when it doesn't exists yet
+     *            
      * @throws FileNotFoundException when createIfNotExists = false (by default) and the file does not exist
-     * 
+     *        
      * @return \compact\repository\IModelRepository
      */
     private function createDb($guid, $createIfNotExists = false)
     {
         assert(strlen($guid) > 10);
         
-        $filepath = Context::get()->basePath('app/db/'.$guid.'.json');
+        $filepath = Context::get()->basePath('app/db/' . $guid . '.json');
         
-        if(!$createIfNotExists && !$filepath->isFile()){
+        if (! $createIfNotExists && ! $filepath->isFile()) {
             throw new FileNotFoundException($filepath);
         }
         
         return new JsonRepository(new DefaultModelConfiguration(), $filepath);
     }
-    
+
     /**
      * Returns all links or just one when the GUID has been set
      *
      * @param $guid [optional]
      *            The guid of the link
-     *
+     *            
      * @return HttpStatus 200 | 204 //
      *         200 with JSON of one model when $guid not is null else it will return a resultset with models
      *         204 no content when there are no models in the database or the id is not known
@@ -66,18 +71,18 @@ class GulpfileController
     {
         $db = $this->createDb($guid);
         $sc = $db->createSearchCriteria();
-    
+        
         if ($guid) {
             $sc->where("guid", $guid);
         }
-    
+        
         $result = $db->search($sc);
         if ($result->count() > 0) {
             return new HttpStatus(HttpStatus::STATUS_200_OK, new Json($result));
         }
         return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
     }
-    
+
     /**
      * Stores a new model
      *
@@ -92,23 +97,23 @@ class GulpfileController
     {
         $guid = Random::guid();
         $db = $this->createDb($guid, true); // create new file
-        
+                                            
         // TODO implement 409
         $model = ModelUtils::getPostForDynamicModel(new Model());
-
+        
         $isEmpty = true;
-        foreach ($model as $key => $value){
+        foreach ($model as $key => $value) {
             $isEmpty = false;
             break;
         }
-       
+        
         if ($isEmpty) {
-            return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT,array(
+            return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT, array(
                 "message" => 'test'
             ));
         }
         $model->guid = $guid;
-
+        
         try {
             if ($db->save($model)) {
                 return new HttpStatus(HttpStatus::STATUS_201_CREATED, new Json($model));
@@ -122,30 +127,56 @@ class GulpfileController
         Logger::get()->logWarning("Could not save model " . get_class($model));
         return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
     }
-    
-    public function addtask($guid){
-        
+
+    public function addtask($guid)
+    {
         $db = $this->createDb($guid);
         
-        $task = ModelUtils::getPostForDynamicModel(new Model());
+        $sc = $db->createSearchCriteria();
+        if ($guid) {
+            $sc->where("guid", $guid);
+        }
         
+        $result = $db->search($sc);
+        if ($result->count() > 0) {
+            
+            $gulpfile = $result->offsetGet(0); // get first model
+            
+            $tasks = $gulpfile->get('tasks');
+            if (! is_array($tasks)) {
+                $tasks = [];
+            }
+            
+            // add task
+            $task = ModelUtils::getPostForDynamicModel(new Model());
+            $tasks[] = $task;
+            
+            $gulpfile->set('tasks', $tasks);
+            
+            $db->save($gulpfile);
+            
+            return new HttpStatus(HttpStatus::STATUS_200_OK, new Json($gulpfile));
+        }
         
-        // TODO
+        return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
         
+        // TODO add task...
     }
-    
+
     /**
      * Returns all predefined tasks
-     * 
+     *
      * @return \compact\handler\impl\json\Json
      */
-    public function getTasks(){
+    public function getTasks()
+    {
         return new Json(json_decode(file_get_contents(__DIR__ . "/tasks/tasks.json")));
     }
-    
-    public function download($guid){
+
+    public function download($guid)
+    {
         $g = new GulpTasks();
         
-        return new Download($g->generate(), 'gulpfile.js', Download::DOWNLOAD_MIME_TYPE);
+        return new Download($g->generate(guid), 'gulpfile.js', Download::DOWNLOAD_MIME_TYPE);
     }
 }

@@ -56,6 +56,8 @@ class AppContext implements IAppContext
         
         /*
          * Generate the gulp task
+         * 
+         * url /generate/2191B876-84A0-DB62-FBBD-8BD9D0584887
          */
         $router->add("^/generate/(".self::GUID_REGEX.")$", function($guid){
             return \gulp\GulpfileController::instance()->download($guid);
@@ -73,7 +75,7 @@ class AppContext implements IAppContext
          * Add a task to an existing gulp file
         */
         $router->add("^/tasks/(".self::GUID_REGEX.")$", function($guid){
-            return \gulp\GulpfileController::instance()->put($guid);
+            return \gulp\GulpfileController::instance()->addtask($guid);
         }, 'PUT');
         
         /**
