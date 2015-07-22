@@ -1,0 +1,136 @@
+.msgbox{
+  border-radius: 5px;
+  color:#555;
+  margin-bottom:10px;
+  padding:20px;
+  border: 1px solid #999;
+  position: relative;
+
+  h4, .title{
+    border-bottom: 1px solid #999;
+    font-size:110%;
+    font-weight: bold;
+    margin: 0 0 10px;
+    padding:3px 0;
+  }
+
+  p{
+    margin:0;
+    padding:0;
+  }
+  &.page{
+    animation: bounce 800ms ease-out;
+    border: 1px solid #000;
+    color: #fff;
+    background-color: rgba(17,17,17,.6);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .3);
+    margin: 0 auto;
+    left: 25%;
+    margin: 10px 0;
+    padding: 20px 10px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 50%;
+    min-width: 320px;
+    z-index: 9999;
+  }
+  .close{
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 300;
+    text-shadow: 0 1px 0 #999;
+    position: absolute;
+    right: -10px;
+    top: 2px;
+    right: 2px;
+  }
+  &:hover{
+    text-decoration: none;
+  }
+}
+ 
+
+
+.msgbox.error{
+  background-color:#FFD7D7;
+    border:solid 1px #DF8F8F;
+}
+.msgbox.error h4{
+  border-bottom: solid 1px #DF8F8F;
+}
+.msgbox.confirm{
+  background-color:#ECFAE3;
+    border:solid 1px #5BCF5D;
+}
+.msgbox.confirm h4{
+  border-bottom: solid 1px #5BCF5D;
+}
+.msgbox.warning{
+  background-color:#FFFBCC;
+    border:solid 1px #E6DB55;
+}
+.msgbox.warning h4{
+  border-bottom: solid 1px #E6DB55;
+}
+.msgbox.info{
+  background-color:#DBE3FF;
+    border:solid 1px #A2B4EE;
+}
+.msgbox.info h4{
+  border-bottom: solid 1px #A2B4EE;
+}
+
+@keyframes bounce {
+  0% {
+  transform:translateY(-100%);
+    opacity: 0;
+  }
+  5% {
+    transform:translateY(-100%);
+    opacity: 0;
+  }
+  15% {
+    transform:translateY(0);
+    padding-bottom: 5px;
+  }
+  30% {
+    transform:translateY(-50%);
+  }
+  40% {
+    transform:translateY(0%);
+    padding-bottom: 6px;
+  }
+  50% {
+    transform:translateY(-30%);
+  }
+  70% {
+    transform:translateY(0%);
+    padding-bottom: 7px;
+  }
+  80% {
+    transform:translateY(-15%);
+  }
+  90% {
+    transform:translateY(0%);
+    padding-bottom: 8px;
+  }
+  95% {
+    transform:translateY(-7%);
+  }
+  97% {
+    transform:translateY(0%);
+    padding-bottom: 9px;
+  }
+  99% {
+    transform:translateY(-3%);
+  }
+  100% {
+    transform:translateY(0);
+    padding-bottom: 9px;
+    opacity: 0.6;
+  }
+}

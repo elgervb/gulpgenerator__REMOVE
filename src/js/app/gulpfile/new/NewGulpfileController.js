@@ -7,16 +7,13 @@ app.controller('NewGulpfileController', function($scope, $http, $location, Share
 
   $scope.package = SharedData.load();
 
-  function handleError() {
-    console.error('Failed to add gulpfile details (' + status + ')');
-  }
-
   /**
    * Continue to the next page: generator where the user can add, edit or delete tasks
    */
   $scope.continue = function() {
 
-    $http.post(BaseUrl + 'gulpfile', $scope.package).then(function(response, status, headers, config) {
+    $http.post(BaseUrl + 'gulpfile', $scope.package)
+    .then(function(response, status, headers, config) {
       if (response.status === 201) { // Created
         $scope.package = response.data;
         
@@ -24,12 +21,13 @@ app.controller('NewGulpfileController', function($scope, $http, $location, Share
 
         $location.path('/gulpfile/' + $scope.package.guid);
       } else {
-        handleError();
+        $scope.error = 'Failed to add gulpfile details (Network status: ' + status + ')';
       }
     }, function(data, status, headers, config) {
-      handleError();
-    }).catch(function() {
-      handleError();
+      $scope.error = 'Looks like there was a network error. Please check your internet connection and try again later.';
+    })
+    .catch(function(data, status, headers, config) {
+      $scope.error = 'Failed to add gulpfile details (Network status: ' + status + ')';
     });
 
     
