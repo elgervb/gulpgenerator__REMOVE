@@ -73,6 +73,8 @@ class AppContext implements IAppContext
         
         /*
          * Add a task to an existing gulp file
+         * 
+         * url: /tasks/25A5E4D5-B7B2-BF8B-28FE-854E8E56C4C4
         */
         $router->add("^/tasks/(".self::GUID_REGEX.")$", function($guid){
             return \gulp\GulpfileController::instance()->addtask($guid);
