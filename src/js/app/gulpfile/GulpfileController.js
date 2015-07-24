@@ -33,25 +33,29 @@ app.controller('GulpfileController', function($scope, $http, $routeParams, TaskS
    * Select a predifined task and copy it to the gulpfile
    */
   $scope.select = function(task) {
-    if (!angular.isArray($scope.tasks)) {
-      $scope.tasks = [];
-    }
 
     task = angular.copy(task);
 
     // Add task
-    $http.put(BaseUrl + 'tasks/' + $routeParams.guid);
-
-    $scope.tasks.push(task);
-    $scope.toggle(task, true); // Force toggle to open the task
-    $scope.scope.editmode = true;
-    $scope.showAdd = false;
-
-
-    // Sort the list
-    $scope.tasks.sort(function(a, b) {
-      return a.name > b.name;
+    $http.put(BaseUrl + 'tasks/' + $routeParams.guid, task)
+    .then(function(response) {
+      $scope.package = response.data;
+      $scope.toggle(task, true); // Force toggle to open the task
+      $scope.scope.editmode = true;
+      $scope.showAdd = false;
+      // Sort the list
+      // TODO maybe we should add a watch to this?
+      $scope.package.tasks.sort(function(a, b) {
+        return a.name > b.name;
+      });
+    }, function(data, status, headers, config) {
+      $scope.error = 'Looks like there was a network error. Please check your internet connection and try again later.';
+    })
+    .catch(function() {
+      $scope.error = 'An error occured.';
     });
+
+   
   };
 
 });
