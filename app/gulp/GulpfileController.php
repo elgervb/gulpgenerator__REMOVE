@@ -133,7 +133,8 @@ class GulpfileController
      * Add a task to the gulpfile 
      * 
      * @param string $guid
-     * @return \compact\handler\impl\http\HttpStatus
+     * 
+     * @return \compact\handler\impl\http\HttpStatus with the added task
      */
     public function addtask($guid)
     {
@@ -168,7 +169,7 @@ class GulpfileController
             
             $db->save($gulpfile);
             
-            return new HttpStatus(HttpStatus::STATUS_200_OK, new Json($gulpfile));
+            return new HttpStatus(HttpStatus::STATUS_200_OK, new Json($task));
         }
         
         return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
@@ -181,7 +182,7 @@ class GulpfileController
      *
      * @return \compact\handler\impl\json\Json
      */
-    public function getTasks()
+    public function getPredefinedTasks()
     {
         return new Json(json_decode(file_get_contents(__DIR__ . "/tasks/tasks.json")));
     }

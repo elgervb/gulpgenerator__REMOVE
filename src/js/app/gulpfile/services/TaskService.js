@@ -1,14 +1,14 @@
 app.service('TaskService', function($http, BaseUrl) {
 
-  var getTasks = function() {
+  var getPredefinedTasks = function() {
     return $http({
       method: 'get',
-      url: BaseUrl + 'tasks'
+      url: BaseUrl + 'predefinedtasks'
     });
   };
 
   return {
-    getTasks: getTasks
+    getPredefinedTasks: getPredefinedTasks
   }
 
 });

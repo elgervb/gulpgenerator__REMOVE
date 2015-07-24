@@ -67,8 +67,8 @@ class AppContext implements IAppContext
         /*
          * Returns all predefined tasks
         */
-        $router->add("^/tasks$", function(){
-            return \gulp\GulpfileController::instance()->getTasks();
+        $router->add("^/predefinedtasks$", function(){
+            return \gulp\GulpfileController::instance()->getPredefinedTasks();
         }, 'GET');
         
         /*

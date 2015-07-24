@@ -23,7 +23,7 @@ app.controller('GulpfileController', function($scope, $http, $routeParams, TaskS
   $scope.addMode = function() {
 
     if (!$scope.predefinedTasks) {
-      TaskService.getTasks().then(function(response) {
+      TaskService.getPredefinedTasks().then(function(response) {
         $scope.predefinedTasks = response.data.tasks;
       });
     }
@@ -38,16 +38,11 @@ app.controller('GulpfileController', function($scope, $http, $routeParams, TaskS
 
     // Add task
     $http.put(BaseUrl + 'tasks/' + $routeParams.guid, task)
-    .then(function(response) {
-      $scope.package = response.data;
-      $scope.toggle(task, true); // Force toggle to open the task
+    .then(function(response) { // New task will be returned in response.data
+      SharedData.addTask(response.data);
+      $scope.toggle(response.data, true); // Force toggle to open the task
       $scope.scope.editmode = true;
       $scope.showAdd = false;
-      // Sort the list
-      // TODO maybe we should add a watch to this?
-      $scope.package.tasks.sort(function(a, b) {
-        return a.name > b.name;
-      });
     }, function(data, status, headers, config) {
       $scope.error = 'Looks like there was a network error. Please check your internet connection and try again later.';
     })
