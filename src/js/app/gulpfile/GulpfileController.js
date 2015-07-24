@@ -37,7 +37,7 @@ app.controller('GulpfileController', function($scope, $http, $routeParams, TaskS
     task = angular.copy(task);
 
     // Add task
-    $http.put(BaseUrl + 'tasks/' + $routeParams.guid, task)
+    TaskService.addTask($scope.package, task)
     .then(function(response) { // New task will be returned in response.data
       SharedData.addTask(response.data);
       $scope.toggle(response.data, true); // Force toggle to open the task

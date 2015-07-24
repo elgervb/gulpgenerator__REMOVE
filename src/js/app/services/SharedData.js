@@ -9,6 +9,7 @@ app.service('SharedData', function(StorageService) {
       dest: './dist',
       report: './report'
     },
+    tasks: [],
     version: {
         major: 0,
         minor: 0,
@@ -16,8 +17,20 @@ app.service('SharedData', function(StorageService) {
       }
   },
   gulpfile = {},
+  addTask = function(task) {
+    package.tasks.push(task);
+    // Sort tasks
+    package.tasks.sort(function(a, b) {
+      return a.name > b.name;
+    });
+    
+    store(package);
+
+    return package;
+  },
   store = function(obj) {
     package = obj;
+    console.assert(package.guid, 'Gulpfile does not have a GUID yet...');
     StorageService.set(package.guid, package);
   },
   load = function(guid) {
@@ -33,6 +46,7 @@ app.service('SharedData', function(StorageService) {
   };
 
   return {
+    addTask: addTask,
     store: store,
     load: load
   }
