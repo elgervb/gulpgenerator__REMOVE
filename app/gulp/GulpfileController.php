@@ -12,6 +12,7 @@ use compact\utils\Random;
 use compact\mvvm\impl\Model;
 use compact\handler\impl\download\Download;
 use compact\filesystem\exceptions\FileNotFoundException;
+use compact\http\HttpSession;
 
 class GulpfileController
 {
@@ -128,8 +129,21 @@ class GulpfileController
         return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
     }
 
+    /**
+     * Add a task to the gulpfile 
+     * 
+     * @param string $guid
+     * @return \compact\handler\impl\http\HttpStatus
+     */
     public function addtask($guid)
     {
+        $task = ModelUtils::getPostForDynamicModel(new Model());
+        
+        // no task present in request body...
+        if ($task->isEmpty('type')){
+            return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
+        }
+        
         $db = $this->createDb($guid);
         
         $sc = $db->createSearchCriteria();
@@ -148,7 +162,6 @@ class GulpfileController
             }
             
             // add task
-            $task = ModelUtils::getPostForDynamicModel(new Model());
             $tasks[] = $task;
             
             $gulpfile->set('tasks', $tasks);
