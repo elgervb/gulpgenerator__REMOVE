@@ -2,6 +2,12 @@
     <h2>generate {{package.name}}</h2>
   </nav>
 
+  <div class="msgbox page" ng-show="error">
+    <button class="close" type="button" ng-click="error='';">&times;</button>
+    <h4 class="title">Error.</h4>
+    <p>{{error}}</p>
+  </div>
+
   <div class="abs-center">
     <button class="btn-get-started" ng-click="download()">download gulpfile</button>
   </div>

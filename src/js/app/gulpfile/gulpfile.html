@@ -2,11 +2,17 @@
     <h2>tasks for {{package.name}}  <span class="version-number">({{package.version | semverFilter}})</span> </h2>
   </nav>
 
+  <div class="msgbox page" ng-show="error">
+    <button class="close" type="button" ng-click="error='';">&times;</button>
+    <h4 class="title">Error.</h4>
+    <p>{{error}}</p>
+  </div>
+
 
   <div class="task-list">
 
   <!-- iterate through the all tasks -->
-    <div class="task" ng-repeat="(key, task) in tasks" ng-class="{toggled: toggled==task}">
+    <div class="task" ng-repeat="(key, task) in package.tasks" ng-class="{toggled: toggled==task}">
 
       <div class="task-header">
         <h2 ng-click="toggle(task)">
