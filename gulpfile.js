@@ -395,8 +395,8 @@ gulp.task('styles', function() {
 
     .pipe(size({"showFiles":true}))
     .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
     .pipe(cmq())
+    .pipe(minifycss())
     .pipe(size({"showFiles":true}))
     .pipe(gulp.dest(settings.dist + 'css'));
 });
