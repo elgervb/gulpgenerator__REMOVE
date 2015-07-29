@@ -11,6 +11,8 @@
 
   <div class="task-list">
 
+    <div ng-hide="package.tasks">No active tasks present. <a ng-click="showAdd=!showAdd; addMode();">Add a new task now.</a></div>
+
   <!-- iterate through the all tasks -->
     <div class="task" ng-repeat="(key, task) in package.tasks" ng-class="{toggled: toggled==task}">
 

@@ -62,7 +62,8 @@ class GulpTasks
             $file = Context::get()->basePath('app/db/'.$guid.'.json');
         }
         
-        return self::convertToModel(json_decode(file_get_contents($file)));
+        $json = file_get_contents($file);
+        return self::convertToModel(json_decode($json)[0]);
     }
     
     /**

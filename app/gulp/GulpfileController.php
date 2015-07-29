@@ -191,6 +191,6 @@ class GulpfileController
     {
         $g = new GulpTasks();
         
-        return new Download($g->generate(guid), 'gulpfile.js', Download::DOWNLOAD_MIME_TYPE);
+        return new Download($g->generate($guid), 'gulpfile.js', Download::DOWNLOAD_MIME_TYPE);
     }
 }
