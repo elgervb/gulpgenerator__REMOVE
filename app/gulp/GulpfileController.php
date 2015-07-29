@@ -173,8 +173,6 @@ class GulpfileController
         }
         
         return new HttpStatus(HttpStatus::STATUS_204_NO_CONTENT);
-        
-        // TODO add task...
     }
 
     /**
